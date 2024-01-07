@@ -6,6 +6,7 @@ import { buttonVariants } from "./ui/button";
 import { cookies } from "next/headers";
 // import UserAccountNav from "./UserAccountNav";
 import NavItems from "./NavItems";
+import Cart from "./Cart";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -86,7 +87,9 @@ const Navbar = async () => {
                     </div>
                   )}
 
-                  <div className="ml-4 flow-root lg:ml-6">{/* <Cart /> */}</div>
+                  <div className="ml-4 flow-root lg:ml-6">
+                    <Cart />
+                  </div>
                 </div>
               </div>
             </div>
