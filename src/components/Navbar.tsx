@@ -1,12 +1,13 @@
 import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Icons } from "./Icons";
+
 import { buttonVariants } from "./ui/button";
 // import { getServerSideUser } from "@/lib/payload-utils";
 import { cookies } from "next/headers";
 // import UserAccountNav from "./UserAccountNav";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
+import Image from "next/image";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -23,7 +24,13 @@ const Navbar = async () => {
 
               <div className="ml-4 flex lg:ml-0">
                 <Link href="/">
-                  <Icons.logo className="h-10 w-10" />
+                  <Image
+                    src={"/logo.png"}
+                    alt="Kate Matveeva Logo"
+                    width={50}
+                    height={50}
+                    quality={100}
+                  />
                 </Link>
               </div>
 
