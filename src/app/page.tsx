@@ -1,7 +1,4 @@
-import Target from "./target/Target";
-import About from "./about/About";
-import Hero from "./hero/Hero";
-import Pricing from "./pricing/Pricing";
+import { Hero, About, Target, Pricing } from "../components";
 
 export default function Home() {
   return (

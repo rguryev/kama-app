@@ -9,17 +9,17 @@ const Footer = () => {
   return (
     <MaxWidthWrapper>
       <footer className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-12 mx-auto">
+        <div className="container mx-auto px-6 py-12">
           <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
           <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div className="sm:col-span-2">
-              <h1 className="max-w-lg text-md font-semibold tracking-tight text-gray-800 xl:text-xl dark:text-white">
+              <h1 className="text-md max-w-lg font-semibold tracking-tight text-gray-800 xl:text-xl dark:text-white">
                 Напишите адрес вашей почты если у вас возникли вопросы, мы с
                 радостью вам ответим!
               </h1>
 
-              <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+              <div className="mx-auto mt-6 flex flex-col space-y-3 md:flex-row md:space-y-0">
                 <Input type="email" placeholder="Email" className="mr-4" />
                 <Button>Отправить</Button>
               </div>
@@ -30,22 +30,22 @@ const Footer = () => {
                 Услуги по легализации
               </p>
 
-              <div className="flex flex-col items-start mt-5 space-y-2">
+              <div className="mt-5 flex flex-col items-start space-y-2">
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 1
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 2
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 3
                 </Link>
@@ -57,22 +57,22 @@ const Footer = () => {
                 Курсы по легализации
               </p>
 
-              <div className="flex flex-col items-start mt-5 space-y-2">
+              <div className="mt-5 flex flex-col items-start space-y-2">
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 1
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 2
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
                 >
                   Услуга 3
                 </Link>
@@ -93,14 +93,14 @@ const Footer = () => {
               />
             </Link>
 
-            <div className="flex -mx-2">
+            <div className="-mx-2 flex">
               <Link
                 href="#"
-                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                className="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
                 aria-label="Reddit"
               >
                 <svg
-                  className="w-5 h-5 fill-current"
+                  className="h-5 w-5 fill-current"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,11 +111,11 @@ const Footer = () => {
 
               <Link
                 href="#"
-                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                className="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
                 aria-label="Facebook"
               >
                 <svg
-                  className="w-5 h-5 fill-current"
+                  className="h-5 w-5 fill-current"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,11 +126,11 @@ const Footer = () => {
 
               <Link
                 href="#"
-                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                className="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
                 aria-label="Github"
               >
                 <svg
-                  className="w-5 h-5 fill-current"
+                  className="h-5 w-5 fill-current"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
