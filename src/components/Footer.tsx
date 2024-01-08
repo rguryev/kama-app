@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Input } from "./ui/input";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { navLinksCourse, navLinksServices } from "@/constants";
 
 const Footer = () => {
   return (
@@ -30,26 +31,18 @@ const Footer = () => {
                 Услуги по легализации
               </p>
 
-              <div className="mt-5 flex flex-col items-start space-y-2">
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 1
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 2
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 3
-                </Link>
-              </div>
+              <ul className="mt-5 flex flex-col items-start space-y-2">
+                {navLinksServices.map((component) => (
+                  <li key={component.id}>
+                    <Link
+                      className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
+                      href={component.href}
+                    >
+                      {component.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div>
@@ -57,26 +50,18 @@ const Footer = () => {
                 Курсы по легализации
               </p>
 
-              <div className="mt-5 flex flex-col items-start space-y-2">
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 1
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 2
-                </Link>
-                <Link
-                  href="#"
-                  className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
-                >
-                  Услуга 3
-                </Link>
-              </div>
+              <ul className="mt-5 flex flex-col items-start space-y-2">
+                {navLinksCourse.map((component) => (
+                  <li key={component.id}>
+                    <Link
+                      className="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400"
+                      href={component.href}
+                    >
+                      {component.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
