@@ -15,6 +15,8 @@ import {
   star,
 } from "../assets";
 
+import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
+
 export const navLinksServices: {
   id: string;
   title: string;
@@ -70,6 +72,35 @@ export const navLinksCourse: {
     title: "Дополнительная информация о курсе",
     href: "#",
     description: "Будьте в курсе последних изменений.",
+  },
+];
+
+export const workflowStages: {
+  id: string;
+  title: string;
+  description: string;
+  icon: any;
+}[] = [
+  {
+    id: "consult",
+    title: "Консультация",
+    description:
+      "Проводим консультацию с анализом вашей ситуации и документов. Предлагаю все возможные варианты получения необходимых документов в кратчайшие сроки.",
+    icon: ArrowDownToLine,
+  },
+  {
+    id: "accept",
+    title: "Заключаем договор",
+    description:
+      "Подписываем договор и запускаем процесс вашей легализации в Польше. Записываю вас в Ужонд, заполняем анкеты, собираем все необходимые документы.",
+    icon: CheckCircle,
+  },
+  {
+    id: "support",
+    title: "Поддержка",
+    description:
+      "Сопровождаю вас в Ужонд, помогаю с последующей корреспонденцией. После 3-4 месяцев ожидания пишу письма на ускорение вашего дела. Я всегда нахожусь на связи и если нужна какая-то помощь или информация , то рада помочь.",
+    icon: Leaf,
   },
 ];
 

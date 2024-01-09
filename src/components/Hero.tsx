@@ -6,7 +6,7 @@ import styles from "../app/style";
 
 const Hero = () => {
   return (
-    <section id="home">
+    <section id="hero">
       <MaxWidthWrapper>
         <div className="mx-auto flex max-w-3xl flex-col items-center pb-28 pt-48 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">

@@ -5,6 +5,8 @@ import {
   Pricing,
   Reviews,
   Solutions,
+  Workflow,
+  Contact,
 } from "../components";
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
       <Pricing />
       <Reviews />
       <Solutions />
+      <Workflow />
+      <Contact />
     </>
   );
 }

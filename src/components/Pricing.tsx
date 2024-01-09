@@ -131,7 +131,7 @@ const Pricing = () => {
   ];
 
   return (
-    <>
+    <section id="pricing">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <div className="mx-auto mb-2 sm:max-w-lg">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -270,7 +270,7 @@ const Pricing = () => {
           </TooltipProvider>
         </div>
       </MaxWidthWrapper>
-    </>
+    </section>
   );
 };
 

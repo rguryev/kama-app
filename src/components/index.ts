@@ -8,3 +8,5 @@ export { default as Pricing } from "./Pricing";
 export { default as Target } from "./Target";
 export { default as Reviews } from "./Reviews";
 export { default as Solutions } from "./Solutions";
+export { default as Workflow } from "./Workflow";
+export { default as Contact } from "./Contact";
