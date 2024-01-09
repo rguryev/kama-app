@@ -6,25 +6,28 @@ import styles from "../app/style";
 
 const Hero = () => {
   return (
-    <MaxWidthWrapper>
-      <div className="mx-auto flex max-w-3xl flex-col items-center py-40 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          Помощь в оформлении ВНЖ, ПМЖ и гражданства{" "}
-          <span className="text-orange-600">Республики Польша</span>
-        </h1>
-        <p className="mt-6 max-w-prose text-lg text-muted-foreground">
-          Привет👋 Мы помогаем оформить ВНЖ, ПМЖ и гражданство Польши,
-          сопровождаем ваши документы и консультируем вас по всем сопутствующим
-          вопросам.
-        </p>
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-          <Link href="/products" className={buttonVariants()}>
-            Записаться
-          </Link>
-          <Button variant="outline">Отзывы о нас &rarr;</Button>
+    <section id="home">
+      <MaxWidthWrapper>
+        <div className="mx-auto flex max-w-3xl flex-col items-center pb-28 pt-48 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            Помощь в оформлении <br />
+            <span className="text-gradient">ВНЖ, ПМЖ и гражданства </span>
+            Республики Польша
+          </h1>
+          <p className="mt-6 max-w-prose text-lg text-muted-foreground">
+            Привет👋 Мы помогаем оформить ВНЖ, ПМЖ и гражданство Польши,
+            сопровождаем ваши документы и консультируем вас по всем
+            сопутствующим вопросам.
+          </p>
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+            <Link href="/products" className={buttonVariants()}>
+              Записаться
+            </Link>
+            <Button variant="outline">Отзывы о нас &rarr;</Button>
+          </div>
         </div>
-      </div>
-    </MaxWidthWrapper>
+      </MaxWidthWrapper>
+    </section>
   );
 };
 

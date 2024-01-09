@@ -1,4 +1,11 @@
-import { Hero, About, Target, Pricing } from "../components";
+import {
+  Hero,
+  About,
+  Target,
+  Pricing,
+  Reviews,
+  Solutions,
+} from "../components";
 
 export default function Home() {
   return (
@@ -7,6 +14,8 @@ export default function Home() {
       <About />
       <Target />
       <Pricing />
+      <Reviews />
+      <Solutions />
     </>
   );
 }

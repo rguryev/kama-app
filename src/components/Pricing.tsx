@@ -137,13 +137,12 @@ const Pricing = () => {
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             Тарифы
           </h1>
-          <p className="mt-5 text-gray-600 sm:text-lg">
-            Whether you&apos;re just trying out our service or need more,
-            we&apos;ve got you covered.
+          <p className="mt-6 max-w-prose text-lg text-gray-600">
+            Выберете тариф под свои нужды.
           </p>
         </div>
 
-        <div className="pt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 pt-12 lg:grid-cols-3">
           <TooltipProvider>
             {pricingItems.map(({ plan, tagline, quota, price, features }) => {
               return (
@@ -156,16 +155,18 @@ const Pricing = () => {
                 >
                   {plan === "Pro" && (
                     <div className="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-3 py-2 text-sm font-medium text-white">
-                      Upgrade now
+                      Запишись сейчас
                     </div>
                   )}
 
                   <div className="p-5">
-                    <h3 className="my-3 text-center font-display text-3xl font-bold">
+                    <h3 className="font-display my-3 text-center text-3xl font-bold">
                       {plan}
                     </h3>
-                    <p className="text-gray-500 h-32">{tagline}</p>
-                    <p className="my-3 font-display text-4xl font-semibold">
+                    <p className="mx-3 h-32 max-w-prose text-justify text-gray-500">
+                      {tagline}
+                    </p>
+                    <p className="font-display my-3 text-4xl font-semibold">
                       {price} zł
                     </p>
                     <p className="text-gray-500">Единоразово</p>
@@ -178,7 +179,7 @@ const Pricing = () => {
                       </p>
 
                       <Tooltip delayDuration={300}>
-                        <TooltipTrigger className="cursor-default ml-1.5">
+                        <TooltipTrigger className="ml-1.5 cursor-default">
                           <HelpCircle className="h-4 w-4 text-zinc-500" />
                         </TooltipTrigger>
                         <TooltipContent className="w-80 p-2">
@@ -201,14 +202,14 @@ const Pricing = () => {
                         {footnote ? (
                           <div className="flex items-center space-x-1">
                             <p
-                              className={cn("text-gray-600", {
+                              className={cn("text-base text-gray-600", {
                                 "text-gray-400": negative,
                               })}
                             >
                               {text}
                             </p>
                             <Tooltip delayDuration={300}>
-                              <TooltipTrigger className="cursor-default ml-1.5">
+                              <TooltipTrigger className="ml-1.5 cursor-default">
                                 <HelpCircle className="h-4 w-4 text-zinc-500" />
                               </TooltipTrigger>
                               <TooltipContent className="w-80 p-2">
@@ -218,7 +219,7 @@ const Pricing = () => {
                           </div>
                         ) : (
                           <p
-                            className={cn("text-gray-600 text-left", {
+                            className={cn("text-left text-gray-600", {
                               "text-gray-400": negative,
                             })}
                           >
@@ -238,8 +239,8 @@ const Pricing = () => {
                           variant: "secondary",
                         })}
                       >
-                        {user ? "Upgrade now" : "Sign up"}
-                        <ArrowRight className="h-5 w-5 ml-1.5" />
+                        {user ? "Подробнее" : "Sign up"}
+                        <ArrowRight className="ml-1.5 h-5 w-5" />
                       </Link>
                     ) : user ? (
                       <Link
@@ -248,8 +249,8 @@ const Pricing = () => {
                           className: "w-full",
                         })}
                       >
-                        {user ? "Upgrade now" : "Sign up"}
-                        <ArrowRight className="h-5 w-5 ml-1.5" />
+                        {user ? "Подробнее" : "Sign up"}
+                        <ArrowRight className="ml-1.5 h-5 w-5" />
                       </Link>
                     ) : (
                       <Link
@@ -258,8 +259,8 @@ const Pricing = () => {
                           className: "w-full",
                         })}
                       >
-                        {user ? "Upgrade now" : "Sign up"}
-                        <ArrowRight className="h-5 w-5 ml-1.5" />
+                        {user ? "Подробнее" : "Sign up"}
+                        <ArrowRight className="ml-1.5 h-5 w-5" />
                       </Link>
                     )}
                   </div>

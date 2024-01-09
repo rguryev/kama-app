@@ -6,3 +6,5 @@ export { default as MaxWidthWrapper } from "./MaxWidthWrapper";
 export { default as Navbar } from "./Navbar";
 export { default as Pricing } from "./Pricing";
 export { default as Target } from "./Target";
+export { default as Reviews } from "./Reviews";
+export { default as Solutions } from "./Solutions";
