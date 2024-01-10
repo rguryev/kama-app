@@ -45,10 +45,10 @@ ListItem.displayName = "ListItem";
 const NavMenu = () => {
   return (
     <>
-      <NavigationMenu id="nav" className="m-auto gap-6">
+      <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
         <NavigationMenuList
           id="nav-list"
-          className="m-auto grid grid-cols-2 gap-1 sm:flex-row"
+          className="grid grid-cols-2 gap-1 sm:flex sm:flex-row"
         >
           <NavigationMenuItem>
             <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
