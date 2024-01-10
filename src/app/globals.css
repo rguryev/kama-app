@@ -56,6 +56,15 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .text-gradient-dark {
+    background: #de3efa;
+    background: linear-gradient(135deg, #f6c3ff, #8f80ff);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 @layer base {

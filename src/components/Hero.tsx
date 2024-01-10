@@ -11,7 +11,9 @@ const Hero = () => {
         <div className="mx-auto flex max-w-3xl flex-col items-center pb-24 pt-48 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Помощь в оформлении <br />
-            <span className="text-gradient">ВНЖ, ПМЖ и гражданства </span>
+            <span className="text-gradient dark:text-gradient-dark">
+              ВНЖ, ПМЖ и гражданства{" "}
+            </span>
             Республики Польша
           </h1>
           <p className="mt-6 max-w-prose text-lg text-muted-foreground dark:text-white">
