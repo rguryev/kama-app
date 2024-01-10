@@ -23,16 +23,17 @@ const perks = [
 ];
 
 import React from "react";
+import { TitleContainer } from ".";
 
 const Target = () => {
   return (
     <section id="target">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
-        <div className="mx-auto mb-10">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <TitleContainer>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
             Для кого этот курс?
           </h1>
-        </div>
+        </TitleContainer>
 
         <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
           {perks.map((perk) => (
@@ -47,9 +48,7 @@ const Target = () => {
               </div>
 
               <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
-                <h3 className="text-xl font-medium text-gray-900">
-                  {perk.name}
-                </h3>
+                <h3 className="text-xl font-medium">{perk.name}</h3>
                 <p className="mt-3 text-base text-muted-foreground">
                   {perk.description}
                 </p>

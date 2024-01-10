@@ -9,12 +9,12 @@ const Hero = () => {
     <section id="hero">
       <MaxWidthWrapper>
         <div className="mx-auto flex max-w-3xl flex-col items-center pb-28 pt-48 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Помощь в оформлении <br />
             <span className="text-gradient">ВНЖ, ПМЖ и гражданства </span>
             Республики Польша
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-muted-foreground">
+          <p className="mt-6 max-w-prose text-lg text-muted-foreground dark:text-white">
             Привет👋 Мы помогаем оформить ВНЖ, ПМЖ и гражданство Польши,
             сопровождаем ваши документы и консультируем вас по всем
             сопутствующим вопросам.

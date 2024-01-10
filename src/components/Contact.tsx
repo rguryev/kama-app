@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MaxWidthWrapper } from ".";
+import { MaxWidthWrapper, TitleContainer } from ".";
 import {
   Form,
   FormControl,
@@ -18,6 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
+import Container from "./Container";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -44,25 +45,25 @@ const Contact = () => {
   }
   return (
     <section id="contact">
-      <MaxWidthWrapper>
-        <div className="mx-auto mb-10 sm:max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+      <MaxWidthWrapper className="max-w-[50rem]">
+        <TitleContainer>
+          <h1 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Свяжитесь со мной
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600">
+          <p className="mt-6 max-w-prose text-center text-lg text-gray-600 dark:text-white">
             Хотите легализоваться или купить курс? Оставляйте заявку!
           </p>
-        </div>
+        </TitleContainer>
 
-        <div>
+        <Container>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
               <FormField
                 control={form.control}
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel className="text-md">Имя</FormLabel>
                     <FormControl>
                       <Input placeholder="Имя" {...field} />
                     </FormControl>
@@ -76,6 +77,7 @@ const Contact = () => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
+                    <FormLabel className="text-md">Номер телефона</FormLabel>
                     <FormControl>
                       <Input placeholder="+48 123 456 789" {...field} />
                     </FormControl>
@@ -91,6 +93,7 @@ const Contact = () => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
+                    <FormLabel className="text-md">Сообщение</FormLabel>
                     <FormControl>
                       <Textarea placeholder="Добрый день" {...field} />
                     </FormControl>
@@ -102,7 +105,7 @@ const Contact = () => {
               <Button type="submit">Отправить</Button>
             </form>
           </Form>
-        </div>
+        </Container>
       </MaxWidthWrapper>
     </section>
   );

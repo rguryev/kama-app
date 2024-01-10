@@ -48,30 +48,34 @@ const perks = [
 ];
 
 import React from "react";
+import Container from "./Container";
+import { TitleContainer } from ".";
 
 const Workflow = () => {
   return (
     <section id="solutions">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
-        <div className="mx-auto mb-10 sm:max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <TitleContainer>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Как я работаю?
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600">
+          <p className="mt-6 max-w-prose text-lg text-gray-600 dark:text-white">
             Этапы нашего сотрудничества
           </p>
-        </div>
+        </TitleContainer>
 
-        <div className="flex flex-col gap-8">
+        <div className="mb-36 flex flex-col gap-8">
           {workflowStages.map((item) => (
-            <div
+            <Container
               key={item.id}
-              className="mx-auto flex w-full rounded-3xl border-2 border-slate-300 bg-slate-50 p-5 text-left align-middle sm:w-[40rem]"
+              className="mx-auto flex w-full p-2 text-left align-middle sm:w-[40rem]"
             >
               <div className="flex items-center justify-center">
-                <div className="m-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-900">
+                <div className="m-2 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-900 sm:m-5 sm:h-16 sm:w-16 dark:bg-slate-600">
                   {/* {<item.Icon className="h-1/3 w-1/3" />} */}
-                  <span className="text-4xl text-slate-400">{item.id}</span>
+                  <span className="text-xl text-slate-400 sm:text-4xl dark:text-white">
+                    {item.id}
+                  </span>
                 </div>
               </div>
 
@@ -81,7 +85,7 @@ const Workflow = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </Container>
           ))}
         </div>
       </MaxWidthWrapper>

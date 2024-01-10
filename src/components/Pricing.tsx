@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 import { ArrowRight, Check, HelpCircle, Minus } from "lucide-react";
 import Link from "next/link";
+import { TitleContainer } from ".";
 
 const Pricing = () => {
   const user = 1;
@@ -133,14 +134,14 @@ const Pricing = () => {
   return (
     <section id="pricing">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
-        <div className="mx-auto mb-2 sm:max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <TitleContainer className="mx-auto mb-2 sm:max-w-lg">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Тарифы
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600">
+          <p className="mt-6 max-w-prose text-lg text-gray-600 dark:text-white">
             Выберете тариф под свои нужды.
           </p>
-        </div>
+        </TitleContainer>
 
         <div className="grid grid-cols-1 gap-5 pt-12 lg:grid-cols-3">
           <TooltipProvider>
@@ -148,10 +149,15 @@ const Pricing = () => {
               return (
                 <div
                   key={plan}
-                  className={cn("relative rounded-2xl bg-white shadow-lg", {
-                    "border-2 border-blue-600 shadow-blue-200": plan === "Pro",
-                    "border border-gray-200": plan !== "Pro",
-                  })}
+                  className={cn(
+                    "relative rounded-2xl bg-white shadow-lg transition-transform hover:scale-105 dark:bg-black",
+                    {
+                      "border-2 border-blue-600 shadow-blue-200":
+                        plan === "Pro",
+                      "border border-gray-200 dark:border-gray-800":
+                        plan !== "Pro",
+                    },
+                  )}
                 >
                   {plan === "Pro" && (
                     <div className="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-3 py-2 text-sm font-medium text-white">
@@ -172,7 +178,7 @@ const Pricing = () => {
                     <p className="text-gray-500">Единоразово</p>
                   </div>
 
-                  <div className="flex h-14 items-center justify-center border-b border-t border-gray-200 bg-gray-50">
+                  <div className="flex h-14 items-center justify-center border-b border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
                     <div className="flex items-center space-x-1">
                       <p>
                         Продолжительность курса {quota.toLocaleString()} месяц

@@ -10,3 +10,5 @@ export { default as Reviews } from "./Reviews";
 export { default as Solutions } from "./Solutions";
 export { default as Workflow } from "./Workflow";
 export { default as Contact } from "./Contact";
+export { default as Logo } from "./Logo";
+export { default as TitleContainer } from "./TitleContainer";

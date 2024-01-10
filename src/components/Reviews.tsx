@@ -1,19 +1,19 @@
 import React from "react";
-import { MaxWidthWrapper } from ".";
+import { MaxWidthWrapper, TitleContainer } from ".";
 import Image from "next/image";
 
 const Reviews = () => {
   return (
-    <section id='reviews'>
+    <section id="reviews">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
-        <div className="mx-auto mb-2 sm:max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <TitleContainer>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Отзывы наших клиентов
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600">
+          <p className="mt-6 max-w-prose text-lg text-gray-700 dark:text-white">
             Почему вы можете нам доверять
           </p>
-        </div>
+        </TitleContainer>
         <ul className="my-10 flex flex-col sm:flex-row">
           <li>
             <Image src="/review1.png" width={400} height={400} alt="review1" />

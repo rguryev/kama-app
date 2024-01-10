@@ -21,7 +21,7 @@ const About = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-center lg:flex-row lg:justify-around dark:bg-gray-800 dark:text-gray-100">
+          <div className="flex flex-col justify-center lg:flex-row lg:justify-around  dark:text-gray-100">
             <div className="h-136 mt-8 flex items-center justify-center rounded-xl p-6 lg:mt-0">
               <Image
                 src="/kate-matveeva.jpeg"
