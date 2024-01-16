@@ -1,5 +1,8 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
+import React from "react";
+import { CompactWrap, SectionContainer, TitleContainer } from ".";
+import Badge from "./ui/badge";
+import { ArrowDownToLine, CheckCircle, Leaf, TargetIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 const perks = [
   {
@@ -22,16 +25,23 @@ const perks = [
   },
 ];
 
-import React from "react";
-import { TitleContainer } from ".";
+export interface IPageInfo {
+  badgeIcon?: LucideIcon;
+  badgeText: string;
+}
+const pageInfo: IPageInfo = {
+  badgeIcon: TargetIcon,
+  badgeText: "Целевая аудитория",
+};
 
 const Target = () => {
   return (
     <section id="target">
-      <MaxWidthWrapper className="mb-8 mt-24 text-center">
+      <SectionContainer className="mb-8 mt-24 text-center">
         <TitleContainer>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            Для кого этот курс?
+          <Badge pageInfo={pageInfo} />
+          <h1>
+            Для кого этот <span className="text-orange-600">курс</span>?
           </h1>
         </TitleContainer>
 
@@ -42,9 +52,9 @@ const Target = () => {
               className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
             >
               <div className="flex justify-center md:flex-shrink-0">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-900">
+                <CompactWrap className="h-16 w-16 items-center justify-center rounded-full bg-slate-50 text-slate-700 ">
                   {<perk.Icon className="h-1/3 w-1/3" />}
-                </div>
+                </CompactWrap>
               </div>
 
               <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
@@ -56,7 +66,7 @@ const Target = () => {
             </div>
           ))}
         </div>
-      </MaxWidthWrapper>
+      </SectionContainer>
     </section>
   );
 };

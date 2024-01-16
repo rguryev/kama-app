@@ -11,7 +11,14 @@ const TitleContainer = ({
   children: ReactNode;
 }) => {
   return (
-    <div className={cn("mx-auto mb-10 sm:max-w-lg", className)}>{children}</div>
+    <div
+      className={cn(
+        "mx-auto mb-10 flex flex-col items-center text-4xl font-bold tracking-tight text-stone-800 sm:max-w-lg sm:text-6xl",
+        className,
+      )}
+    >
+      {children}
+    </div>
   );
 };
 

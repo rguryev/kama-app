@@ -2,11 +2,12 @@ import {
   Hero,
   About,
   Target,
-  Pricing,
+  CoursePricing,
   Reviews,
   Solutions,
   Workflow,
   Contact,
+  Pricing,
 } from "../components";
 
 export default function Home() {
@@ -15,11 +16,12 @@ export default function Home() {
       <Hero />
       <About />
       <Target />
-      <Pricing />
+      <CoursePricing />
       <Reviews />
       <Solutions />
       <Workflow />
       <Contact />
+      <Pricing />
     </>
   );
 }
