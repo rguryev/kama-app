@@ -1,7 +1,4 @@
-import { BellRing, Check } from "lucide-react";
-
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -43,28 +40,35 @@ interface PricingCardProps extends React.ComponentProps<typeof Card> {
 
 const PricingCard: FC<PricingCardProps> = ({ plan, className, ...props }) => {
   return (
-    <Card className={cn("w-[380px]", className)} {...props}>
-      <CardHeader>
-        <CardTitle>{plan.title}</CardTitle>
-        <CardDescription>{plan.tagline}</CardDescription>
+    <Card
+      key={plan.id}
+      className={cn(
+        "relative grid grid-cols-1 gap-2 rounded-3xl bg-stone-50 p-5 pt-10 shadow-priceCard sm:p-2 dark:bg-black",
+        className,
+      )}
+      {...props}
+    >
+      <CardHeader className="p-2">
+        <CardTitle className="font-display mb-3 mt-5 text-left text-2xl font-semibold">
+          {plan.title}
+        </CardTitle>
+        <CardDescription className="h-8 text-left text-base text-gray-500">
+          {plan.tagline}
+        </CardDescription>
+        <p className="font-display pb-4 pt-3 text-left text-4xl font-semibold sm:pt-1">
+          От {plan.price} zł
+        </p>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <div className="flex-1 space-y-1">
-            <p className="text-md">
-              От <span className="text-2xl">{plan.price}</span> zł
-            </p>
-          </div>
-        </div>
         <div>
           {points.map((notification, index) => (
             <div
               key={index}
-              className="mb-4 grid grid-cols-[25px_1fr] items-start pb-1 text-left last:mb-0 last:pb-0"
+              className="mb-4 grid grid-cols-[15px_1fr] text-left last:mb-0 last:pb-0"
             >
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-slate-800" />
+              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-gray-800" />
               <div className="space-y-1">
-                <p className="text-sm font-medium leading-none">
+                <p className="text-base font-medium leading-none">
                   {notification.title}
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -75,8 +79,8 @@ const PricingCard: FC<PricingCardProps> = ({ plan, className, ...props }) => {
           ))}
         </div>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full">Подробнее</Button>
+      <CardFooter className="px-0 py-2">
+        {/* <CoursePricingDialog {...plan} /> */}
       </CardFooter>
     </Card>
   );

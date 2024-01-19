@@ -1,11 +1,10 @@
 import React from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Image from "next/image";
+import MaxWidthWrapper from "./max-width-wrapper";
 import { Input } from "./ui/input";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { navLinksCourse, navLinksServices } from "@/constants";
-import { Logo } from ".";
+import Logo from "./logo";
 
 const Footer = () => {
   return (

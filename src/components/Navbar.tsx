@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { menu } from "../assets";
-import { Logo, MaxWidthWrapper } from ".";
+
 import {
   Sheet,
   SheetContent,
@@ -13,7 +13,9 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 
-import NavMenu from "./NavMenu";
+import NavMenu from "./nav-menu";
+import MaxWidthWrapper from "./max-width-wrapper";
+import Logo from "./logo";
 
 const Navbar = () => {
   return (

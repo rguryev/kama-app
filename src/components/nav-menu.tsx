@@ -11,10 +11,9 @@ import {
 } from "./ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
 import { navLinksCourse, navLinksServices } from "@/constants";
-import { Logo } from ".";
-import { ModeToggle } from "./ThemeToggle";
+import { ModeToggle } from "./theme-toggle";
+import Logo from "./logo";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

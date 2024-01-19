@@ -13,7 +13,7 @@ const Container = ({
   return (
     <div
       className={cn(
-        "rounded-3xl border-2 border-slate-300 bg-slate-50 p-5 dark:bg-slate-900 dark:text-white",
+        "rounded-3xl bg-slate-50 p-5 dark:bg-slate-900 dark:text-white",
         className,
       )}
     >

@@ -1,8 +1,10 @@
 import React from "react";
-import { CompactWrap, SectionContainer, TitleContainer } from ".";
 import Badge from "./ui/badge";
 import { ArrowDownToLine, CheckCircle, Leaf, TargetIcon } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import SectionContainer from "./section-container";
+import TitleContainer from "./title-container";
+import CompactWrap from "./compact-wrap";
 
 const perks = [
   {

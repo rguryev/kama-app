@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-import { buttonVariants } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -10,8 +9,8 @@ import {
 
 import { cn } from "@/lib/utils";
 
-import { ArrowRight, Check, HelpCircle, Minus } from "lucide-react";
-import Link from "next/link";
+import { Check, HelpCircle, Minus } from "lucide-react";
+
 import {
   Card,
   CardContent,
@@ -20,8 +19,10 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import CoursePricingDialog from "./course-pricing-dialog";
 
-interface CoursePricingCardProps extends React.ComponentProps<typeof Card> {
+export interface CoursePricingCardProps
+  extends React.ComponentProps<typeof Card> {
   plan: {
     id: number;
     title: string;
@@ -29,6 +30,7 @@ interface CoursePricingCardProps extends React.ComponentProps<typeof Card> {
     quota: number;
     price: number;
     features: Feature[];
+    blocks: Block[];
   };
   className?: string;
 }
@@ -39,34 +41,41 @@ type Feature = {
   negative?: boolean;
 };
 
+export type Block = {
+  title: string;
+  description: string;
+};
+
 const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
   return (
     <Card
       key={plan.id}
       className={
-        "shadow-priceCard relative grid grid-cols-1 gap-2 rounded-3xl bg-stone-50 p-6 pt-10 dark:bg-black"
+        "relative grid grid-cols-1 gap-2 rounded-3xl bg-stone-50 p-6 pt-10 text-sm shadow-priceCard dark:bg-black"
       }
     >
-      <CardHeader className="p-0">
+      <CardHeader className="p-2">
         <CardTitle className="font-display mb-3 text-left text-2xl font-semibold">
           {plan.title}
         </CardTitle>
-        <CardDescription className="max-h-max max-w-prose text-wrap text-left text-base text-gray-500 sm:h-32">
+        <CardDescription className="max-h-28 max-w-prose text-wrap text-left text-gray-700 sm:h-32">
           {plan.tagline}
         </CardDescription>
-        <p className="font-display pb-4 pt-3 text-left text-4xl font-semibold sm:pt-1">
+        <p className="font-display mb-2 mt-2 text-left text-4xl font-semibold sm:pt-1">
           {plan.price} zł
         </p>
       </CardHeader>
       <CardContent className="p-0">
         <TooltipProvider>
-          <div className="flex h-14 rounded-2xl border-gray-600 bg-gray-100 shadow-compact dark:border-gray-800 dark:bg-gray-900">
-            <div className="mx-3 flex items-center space-x-0 text-sm">
-              <p>Продолжительность курса {plan.quota.toLocaleString()} месяц</p>
+          <div className="flex h-10 rounded-2xl border-gray-600 bg-gray-100 shadow-compact dark:border-gray-800 dark:bg-gray-900">
+            <div className="mx-auto flex items-center space-x-0  text-sm">
+              <p className="text-center">
+                Продолжительность курса {plan.quota.toLocaleString()} месяц
+              </p>
 
               <Tooltip delayDuration={300}>
                 <TooltipTrigger className="ml-1.5 cursor-default">
-                  <HelpCircle className="ml-1 h-4 w-4 text-zinc-500" />
+                  <HelpCircle className="ml-1 h-4 w-4 text-gray-700" />
                 </TooltipTrigger>
                 <TooltipContent className="w-80 p-2">
                   Старт потока 30 января
@@ -75,20 +84,20 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
             </div>
           </div>
 
-          <ul className="my-6 space-y-2">
+          <ul className="my-6 space-y-1">
             {plan.features.map(({ text, footnote, negative }) => (
-              <li key={text} className="flex space-x-2">
+              <li key={text} className="flex space-x-1">
                 <div className="flex-shrink-0">
                   {negative ? (
                     <Minus className="h-6 w-6 text-gray-300" />
                   ) : (
-                    <Check className="h-6 w-6 text-gray-500" />
+                    <Check className="h-6 w-6 text-gray-700" />
                   )}
                 </div>
                 {footnote ? (
                   <div className="flex items-center space-x-1">
                     <p
-                      className={cn("text-base text-gray-600", {
+                      className={cn("text-gray-600", {
                         "text-gray-400": negative,
                       })}
                     >
@@ -119,16 +128,7 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
         </TooltipProvider>
       </CardContent>
       <CardFooter className="px-0 py-2">
-        <Link
-          href={"/dashboard"}
-          className={buttonVariants({
-            className: "w-full",
-            variant: "default",
-          })}
-        >
-          {"Подробнее"}
-          <ArrowRight className="ml-1.5 h-5 w-5" />
-        </Link>
+        <CoursePricingDialog {...plan} />
       </CardFooter>
     </Card>
   );

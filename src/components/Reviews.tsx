@@ -1,6 +1,7 @@
 import React from "react";
-import { MaxWidthWrapper, TitleContainer } from ".";
 import Image from "next/image";
+import TitleContainer from "./title-container";
+import MaxWidthWrapper from "./max-width-wrapper";
 
 const Reviews = () => {
   return (

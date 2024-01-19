@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MaxWidthWrapper, TitleContainer } from ".";
+
 import {
   Form,
   FormControl,
@@ -19,6 +19,8 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
 import Container from "./Container";
+import MaxWidthWrapper from "./max-width-wrapper";
+import TitleContainer from "./title-container";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -55,7 +57,7 @@ const Contact = () => {
           </p>
         </TitleContainer>
 
-        <Container>
+        <Container className="bg-gray-50 shadow-priceCard">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
               <FormField

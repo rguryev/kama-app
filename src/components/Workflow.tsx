@@ -1,4 +1,3 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 export const workflowStages = [
   {
@@ -48,8 +47,10 @@ const perks = [
 ];
 
 import React from "react";
+import MaxWidthWrapper from "./max-width-wrapper";
+import TitleContainer from "./title-container";
 import Container from "./Container";
-import { TitleContainer } from ".";
+import CompactWrap from "./compact-wrap";
 
 const Workflow = () => {
   return (
@@ -68,20 +69,20 @@ const Workflow = () => {
           {workflowStages.map((item) => (
             <Container
               key={item.id}
-              className="mx-auto flex w-full p-2 text-left align-middle sm:w-[40rem]"
+              className="mx-auto flex w-full p-2 text-left align-middle shadow-priceCard sm:w-[40rem]"
             >
               <div className="flex items-center justify-center">
-                <div className="m-2 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-900 sm:m-5 sm:h-16 sm:w-16 dark:bg-slate-600">
+                <CompactWrap className="m-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-800 sm:m-5 sm:h-16 sm:w-16 dark:bg-slate-600">
                   {/* {<item.Icon className="h-1/3 w-1/3" />} */}
-                  <span className="text-xl text-slate-400 sm:text-4xl dark:text-white">
+                  <span className="text-xl text-gray-600 sm:text-4xl dark:text-white">
                     {item.id}
                   </span>
-                </div>
+                </CompactWrap>
               </div>
 
-              <div className="my-2">
+              <div className="my-2 mt-6">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-3 text-base text-muted-foreground">
+                <p className="my-2 text-base text-muted-foreground">
                   {item.description}
                 </p>
               </div>

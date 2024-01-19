@@ -1,4 +1,3 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 
 const perks = [
@@ -28,12 +27,13 @@ const perks = [
 ];
 
 import React from "react";
-import { TitleContainer } from ".";
+import SectionContainer from "./section-container";
+import TitleContainer from "./title-container";
 
 const Solutions = () => {
   return (
     <section id="solutions">
-      <MaxWidthWrapper className="mb-8 mt-24 text-center">
+      <SectionContainer className="mb-8 mt-24 text-center">
         <TitleContainer>
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             Какие проблемы я помогу решить?
@@ -51,7 +51,7 @@ const Solutions = () => {
               className="py-4 text-center sm:py-10 md:flex md:items-start md:text-left lg:block lg:text-center"
             >
               <div className="flex justify-center md:flex-shrink-0">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-900 ">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 text-gray-800 shadow-compact ">
                   {<perk.Icon className="h-1/3 w-1/3" />}
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Solutions = () => {
             </div>
           ))}
         </div>
-      </MaxWidthWrapper>
+      </SectionContainer>
     </section>
   );
 };

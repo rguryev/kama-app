@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { MaxWidthWrapper } from ".";
+import MaxWidthWrapper from "./max-width-wrapper";
+
 
 const About = () => {
   return (
