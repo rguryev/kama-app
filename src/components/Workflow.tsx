@@ -49,7 +49,7 @@ const perks = [
 import React from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import TitleContainer from "./title-container";
-import Container from "./Container";
+import Container from "./container";
 import CompactWrap from "./compact-wrap";
 
 const Workflow = () => {
@@ -57,10 +57,10 @@ const Workflow = () => {
     <section id="solutions">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+          <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
             Как я работаю?
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600 dark:text-white">
+          <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
             Этапы нашего сотрудничества
           </p>
         </TitleContainer>

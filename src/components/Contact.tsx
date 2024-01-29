@@ -18,9 +18,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
-import Container from "./Container";
 import MaxWidthWrapper from "./max-width-wrapper";
 import TitleContainer from "./title-container";
+import Container from "./container";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -47,12 +47,12 @@ const Contact = () => {
   }
   return (
     <section id="contact">
-      <MaxWidthWrapper className="max-w-[50rem]">
+      <MaxWidthWrapper className="mb-8 mt-24 max-w-[50rem]">
         <TitleContainer>
-          <h1 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+          <h1 className="text-center font-bold tracking-tight text-gray-900 dark:text-white">
             Свяжитесь со мной
           </h1>
-          <p className="mt-6 max-w-prose text-center text-lg text-gray-600 dark:text-white">
+          <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
             Хотите легализоваться или купить курс? Оставляйте заявку!
           </p>
         </TitleContainer>

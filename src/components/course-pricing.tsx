@@ -262,10 +262,10 @@ const CoursePricing = () => {
     <section id="course-pricing">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer className="mx-auto mb-2 sm:max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+          <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
             Тарифы на курс
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-600 dark:text-white">
+          <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
             Выберете тариф под свои нужды.
           </p>
         </TitleContainer>

@@ -10,16 +10,7 @@ const SectionContainer = ({
   className?: string;
   children: ReactNode;
 }) => {
-  return (
-    <div
-      className={cn(
-        "rounded-xxl mx-auto w-full max-w-screen-xl bg-card px-2.5 py-24 md:px-20",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
+  return <div className={cn("py-20", className)}>{children}</div>;
 };
 
 export default SectionContainer;

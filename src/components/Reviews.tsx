@@ -8,10 +8,10 @@ const Reviews = () => {
     <section id="reviews">
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+          <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
             Отзывы наших клиентов
           </h1>
-          <p className="mt-6 max-w-prose text-lg text-gray-700 dark:text-white">
+          <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
             Почему вы можете нам доверять
           </p>
         </TitleContainer>

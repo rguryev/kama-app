@@ -1,5 +1,5 @@
 import About from "@/components/about";
-import CardsSection from "@/components/cards-section";
+import Bento from "@/components/bento";
 import Contact from "@/components/contact";
 import CoursePricing from "@/components/course-pricing";
 import Hero from "@/components/hero";
@@ -13,15 +13,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Target />
-      <CardsSection />
-      <CoursePricing />
-      <Reviews />
+      <Bento />
+      {/* <About /> */}
       <Solutions />
       <Workflow />
-      <Contact />
       <Pricing />
+      <Reviews />
+      <Target />
+      <CoursePricing />
+      <Contact />
     </>
   );
 }
