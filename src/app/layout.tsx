@@ -4,8 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme-provider";
-import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +38,7 @@ export default function RootLayout({
           <main className="relative flex min-h-screen flex-col ">
             <Navbar />
             <div className="flex-1 flex-grow">{children}</div>
-            {/* <Footer /> */}
+            <Footer />
           </main>
         </ThemeProvider>
         <SpeedInsights />
