@@ -43,6 +43,7 @@ object-contain"
                 <SheetHeader>
                   <SheetTitle>Меню</SheetTitle>
                   <SheetDescription>Куда хотите перейти?</SheetDescription>
+                  {/* test */}
                   <NavMenu />
                 </SheetHeader>
               </SheetContent>
