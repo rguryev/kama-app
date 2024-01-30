@@ -13,14 +13,7 @@ import { FC } from "react";
 import { ScrollArea } from "./ui/scroll-area";
 import { Block, CoursePricingCardProps } from "./course-pricing-card";
 
-interface CoursePricingDialogProps extends CoursePricingCardProps {
-  blocks: Block[];
-}
-
-const CoursePricingDialog: FC<CoursePricingDialogProps> = ({
-  title,
-  blocks,
-}) => {
+const CoursePricingDialog: FC<CoursePricingCardProps> = ({ plan }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -30,13 +23,13 @@ const CoursePricingDialog: FC<CoursePricingDialogProps> = ({
       </DialogTrigger>
       <DialogContent className="max-h-max max-w-[60rem]">
         <DialogHeader>
-          <DialogTitle>Тариф: {title}</DialogTitle>
+          <DialogTitle>Тариф: {plan.title}</DialogTitle>
           <DialogDescription>Программа курса: </DialogDescription>
         </DialogHeader>
         <ScrollArea className="h-[450px] w-auto">
           <div className="flex flex-col gap-4 py-4 sm:grid">
             <ul>
-              {blocks.map((obj, index) => {
+              {plan.blocks.map((obj, index) => {
                 return (
                   <li
                     key={index}

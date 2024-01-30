@@ -128,7 +128,7 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
         </TooltipProvider>
       </CardContent>
       <CardFooter className="px-0 py-2">
-        <CoursePricingDialog {...plan} />
+        <CoursePricingDialog plan={plan} />
       </CardFooter>
     </Card>
   );
