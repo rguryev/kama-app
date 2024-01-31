@@ -17,7 +17,7 @@ const Title = ({ item }: { item: GridItemInterface }) => {
         <p className="mt-1 max-w-prose text-base text-muted-foreground dark:text-white">
           {item.description}
         </p>
-        <div className="my-2 flex flex-col gap-2 sm:flex-row">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Link href="/products" className={buttonVariants()}>
             Записаться
           </Link>
