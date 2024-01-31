@@ -21,29 +21,50 @@ import { Textarea } from "./ui/textarea";
 import MaxWidthWrapper from "./max-width-wrapper";
 import TitleContainer from "./title-container";
 import Container from "./container";
+import { sendMessage } from "@/api/telegram";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "В имени должно быть больше одной буквы",
   }),
-  phone: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  phone: z.string().refine((value) => /^\+?[1-9]\d{8,11}$/.test(value), {
+    message: "Неправильно введен номер",
+  }),
+  message: z.string().min(10, {
+    message: "Сообщение слишком короткое",
   }),
 });
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
       phone: "",
+      message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>): Promise<void> {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    try {
+      setIsLoading(true);
+      const message = `Имя: ${values.username}, Телефон: ${values.phone}, Сообщение: ${values.message}`;
+      await sendMessage(message);
+      form.reset();
+    } catch (e) {
+      form.setError("username", {
+        type: "manual",
+        message: `${e as string}`,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   }
   return (
     <section id="contact">
@@ -57,7 +78,7 @@ const Contact = () => {
           </p>
         </TitleContainer>
 
-        <Container className="bg-gray-50 shadow-priceCard">
+        <Container className="mx-4 bg-gray-50 shadow-priceCard ">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
               <FormField
@@ -81,7 +102,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel className="text-md">Номер телефона</FormLabel>
                     <FormControl>
-                      <Input placeholder="+48 123 456 789" {...field} />
+                      <Input placeholder="123235235" {...field} />
                     </FormControl>
                     <FormDescription>
                       Введите ваш номер телефона.
@@ -92,19 +113,54 @@ const Contact = () => {
               />
               <FormField
                 control={form.control}
-                name="phone"
+                name="message"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-md">Сообщение</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Добрый день" {...field} />
+                      <Textarea placeholder="Напишите нам" {...field} />
                     </FormControl>
                     <FormDescription>Введите ваше сообщение.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit">Отправить</Button>
+              <Button
+                disabled={isLoading}
+                type="submit"
+                onClick={() => {
+                  if (form.formState.isValid) {
+                    const currentDate = new Date();
+                    const formattedDate = currentDate.toLocaleString("ru-Ru", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                    });
+
+                    // Валидация успешна, выполните отправку данных и отобразите toast
+                    toast("Ваша заявка принята, скоро мы с вами свяжемся", {
+                      description: formattedDate,
+                      action: {
+                        label: "Закрыть",
+                        onClick: () => console.log("Undo"),
+                      },
+                    });
+                  }
+                }}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                  </>
+                ) : (
+                  "Отправить"
+                )}
+              </Button>
             </form>
           </Form>
         </Container>

@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ThemeProvider from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           <main className="relative flex min-h-screen flex-col ">
             <Navbar />
             <div className="flex-1 flex-grow">{children}</div>
+            <Toaster />
             <Footer />
           </main>
         </ThemeProvider>
