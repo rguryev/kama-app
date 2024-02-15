@@ -8,15 +8,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "./ui/navigation-menu";
+} from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { navLinksCourse, navLinksServices } from "@/constants";
-import { ModeToggle } from "./theme-toggle";
-import Logo from "./logo";
+import { ModeToggle } from "../theme-toggle";
+import Logo from "../logo";
 import { Trans } from "react-i18next/TransWithoutContext";
 import { languages } from "@/app/i18n/settings";
-import { useTranslation } from "@/app/i18n";
+import { TFunction } from "i18next";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -44,12 +44,12 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-interface NavMenuProps {
+interface NavMenuBaseProps {
   lng: string;
+  t: TFunction;
 }
 
-const NavMenu = async ({ lng }: NavMenuProps) => {
-  const { t } = await useTranslation(lng, "navbar");
+const NavMenuBase = async ({ lng, t }: NavMenuBaseProps) => {
   return (
     <>
       <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
@@ -139,4 +139,4 @@ const NavMenu = async ({ lng }: NavMenuProps) => {
   );
 };
 
-export default NavMenu;
+export default NavMenuBase;

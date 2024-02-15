@@ -13,9 +13,9 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 
-import NavMenu from "./nav-menu";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Logo from "./logo";
+import { NavMenu } from "./nav-menu";
 
 interface NavbarProps {
   lng: string;
