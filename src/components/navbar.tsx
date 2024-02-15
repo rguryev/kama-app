@@ -17,7 +17,11 @@ import NavMenu from "./nav-menu";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Logo from "./logo";
 
-const Navbar = () => {
+interface NavbarProps {
+  lng: string;
+}
+
+const Navbar = ({ lng }: NavbarProps) => {
   return (
     // <nav className="sticky inset-x-0 top-0 z-50 h-20 bg-slate-100">
     <MaxWidthWrapper className="sticky top-0 z-50 h-full sm:top-4">
@@ -26,7 +30,7 @@ const Navbar = () => {
           <Logo />
 
           <div className="hidden flex-1 items-center justify-end sm:flex">
-            <NavMenu />
+            <NavMenu lng={lng} />
           </div>
 
           <div className="flex flex-1 items-center justify-end sm:hidden">
@@ -44,7 +48,7 @@ object-contain"
                   <SheetTitle>Меню</SheetTitle>
                   <SheetDescription>Куда хотите перейти?</SheetDescription>
                   {/* test */}
-                  <NavMenu />
+                  <NavMenu lng={lng} />
                 </SheetHeader>
               </SheetContent>
             </Sheet>

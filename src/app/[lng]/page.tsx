@@ -8,13 +8,20 @@ import Reviews from "@/components/reviews";
 import Solutions from "@/components/solutions";
 import Target from "@/components/target";
 import Workflow from "@/components/workflow";
+import Link from "next/link";
+import { useTranslation } from "../i18n";
 
-export default function Home() {
+export default async function Home({ params: { lng } }: any) {
+  const { t } = await useTranslation(lng);
   return (
     <>
+      <div>
+        <h1>{t("title")}</h1>
+        <Link href={`/${lng}/second-page`}>{t("to-second-page")}</Link>
+      </div>
       <Hero />
       <Bento />
-      {/* <About /> */}
+      <About />
       <Solutions />
       <Workflow />
       <Pricing />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import LogoImage from "../../public/images/logo.png";
 
 interface LogoProps {}
 
@@ -11,7 +12,7 @@ const Logo: FC<LogoProps> = ({}) => {
         <Image
           alt="Kate Matveeva Logo"
           color="slate"
-          src={"/logo.png"}
+          src={LogoImage}
           width={43}
           height={43}
           quality={100}

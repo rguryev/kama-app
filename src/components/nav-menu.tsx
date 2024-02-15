@@ -14,6 +14,9 @@ import Link from "next/link";
 import { navLinksCourse, navLinksServices } from "@/constants";
 import { ModeToggle } from "./theme-toggle";
 import Logo from "./logo";
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages } from "@/app/i18n/settings";
+import { useTranslation } from "@/app/i18n";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -41,7 +44,12 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const NavMenu = () => {
+interface NavMenuProps {
+  lng: string;
+}
+
+const NavMenu = async ({ lng }: NavMenuProps) => {
+  const { t } = await useTranslation(lng, "navbar");
   return (
     <>
       <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
@@ -56,7 +64,7 @@ const NavMenu = () => {
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
-                      className="flex h-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                      className="from-muted/50 flex h-full select-none flex-col justify-end rounded-md bg-gradient-to-b to-muted p-4 no-underline outline-none focus:shadow-md"
                       href={"/"}
                     >
                       <Logo />
@@ -102,6 +110,25 @@ const NavMenu = () => {
                 Форма для контакта
               </NavigationMenuLink>
             </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <div className="m-auto flex w-20 justify-center gap-4">
+              {/* <Trans t={t}>
+                <strong className="text-lg">{lng}</strong> |
+              </Trans> */}
+              <div className="cursor-pointer rounded-md bg-foreground px-4 py-1 text-center text-lg font-bold text-background">
+                {languages
+                  .filter((l) => lng !== l)
+                  .map((l, index) => {
+                    return (
+                      <span key={l}>
+                        {index > 0 && " or "}
+                        <Link href={`/${l}`}>{l}</Link>
+                      </span>
+                    );
+                  })}
+              </div>
+            </div>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <ModeToggle />

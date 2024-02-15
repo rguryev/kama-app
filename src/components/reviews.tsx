@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import TitleContainer from "./title-container";
 import MaxWidthWrapper from "./max-width-wrapper";
+import Review1 from "../../public/images/review1.png";
 
 const Reviews = () => {
   return (
@@ -17,16 +18,16 @@ const Reviews = () => {
         </TitleContainer>
         <ul className="my-10 flex flex-col sm:flex-row">
           <li>
-            <Image src="/review1.png" width={400} height={400} alt="review1" />
+            <Image src={Review1} width={400} height={400} alt="review1" />
           </li>
           <li>
-            <Image src="/review2.jpg" width={400} height={400} alt="review2" />
+            <Image src={Review1} width={400} height={400} alt="review2" />
           </li>
           <li>
-            <Image src="/review3.jpg" width={400} height={400} alt="review3" />
+            <Image src={Review1} width={400} height={400} alt="review3" />
           </li>
           <li>
-            <Image src="/review4.jpg" width={400} height={400} alt="review4" />
+            <Image src={Review1} width={400} height={400} alt="review4" />
           </li>
         </ul>
       </MaxWidthWrapper>

@@ -8,6 +8,9 @@ import Footer from "@/components/footer";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
+import { dir } from "i18next";
+import { languages } from "../i18n/settings";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,13 +18,19 @@ export const metadata: Metadata = {
   description: "Помощь в оформлении ВНЖ, ПМЖ и гражданства Республики Польша",
 };
 
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
 export default function RootLayout({
   children,
+  params: { lng },
 }: {
   children: React.ReactNode;
+  params: { lng: string };
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang={lng} dir={dir(lng)} className="h-full">
       <body
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
@@ -37,7 +46,7 @@ export default function RootLayout({
           <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-[#dbd7fb] blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#ecd0ff]"></div> */}
 
           <main className="relative flex min-h-screen flex-col ">
-            <Navbar />
+            <Navbar lng={lng} />
             <div className="flex-1 flex-grow">{children}</div>
             <Toaster />
             <Footer />

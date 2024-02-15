@@ -13,8 +13,7 @@ const About = ({ item }: { item: GridItemInterface }) => {
       <div className="relative m-2 mb-0 h-1/2 flex-shrink-0 rounded-3xl bg-white dark:bg-background">
         <Image
           className="rounded-3xl object-cover object-center"
-          objectFit="cover"
-          objectPosition="center center"
+          style={{ objectFit: "cover", objectPosition: "center center" }}
           src={item.image ?? ""}
           alt="equipments"
           fill
@@ -23,10 +22,10 @@ const About = ({ item }: { item: GridItemInterface }) => {
       {/* Content 1 */}
       <div className="relative my-2 flex w-full flex-grow flex-col flex-wrap items-center justify-around gap-3 space-y-3 px-2">
         <div className="flex w-full flex-row justify-between">
-          <div className="dark:bg-backgroundAlt flex rounded-2xl bg-background p-2 px-4 text-2xl font-medium text-foreground dark:text-foreground">
+          <div className="flex rounded-2xl bg-background p-2 px-4 text-2xl font-medium text-foreground dark:bg-backgroundAlt dark:text-foreground">
             {item.title}
           </div>
-          <div className="dark:bg-backgroundAlt flex self-end rounded-xl bg-background">
+          <div className="flex self-end rounded-xl bg-background dark:bg-backgroundAlt">
             {item.icon && <Icon type={item.icon} color={item.color} />}
           </div>
         </div>
@@ -36,7 +35,7 @@ const About = ({ item }: { item: GridItemInterface }) => {
           item.features.map((feature) => (
             <div
               key={feature.id}
-              className="dark:bg-backgroundAlt my-2 mt-0 flex flex-1 flex-col items-center rounded-xl bg-background p-1 text-foreground dark:text-foreground"
+              className="my-2 mt-0 flex flex-1 flex-col items-center rounded-xl bg-background p-1 text-foreground dark:bg-backgroundAlt dark:text-foreground"
             >
               <h3 className="pt-1 text-2xl font-bold">{feature.value}</h3>
               <p className="text-center text-sm">{feature.title}</p>

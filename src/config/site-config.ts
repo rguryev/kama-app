@@ -100,7 +100,7 @@ const GridItems: GridItemInterface[] = [
     description: "",
     icon: "upRightArrow",
     color: "(var(--foreground))",
-    image: "/kate-matveeva-nobg.png",
+    image: "/images/kate-matveeva-nobg.png",
     link: "/",
     features: [
       {

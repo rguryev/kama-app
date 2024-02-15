@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
-
+import Author from "../../public/images/kate-matveeva.jpeg";
 
 const About = () => {
   return (
@@ -25,8 +25,8 @@ const About = () => {
           <div className="flex flex-col justify-center lg:flex-row lg:justify-around  dark:text-gray-100">
             <div className="h-136 mt-8 flex items-center justify-center rounded-xl p-6 lg:mt-0">
               <Image
-                src="/kate-matveeva.jpeg"
-                alt="product preview"
+                src={Author}
+                alt="author preview"
                 width={500}
                 height={600}
                 quality={100}
