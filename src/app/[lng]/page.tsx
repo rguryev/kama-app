@@ -15,10 +15,10 @@ export default async function Home({ params: { lng } }: any) {
   const { t } = await useTranslation(lng);
   return (
     <>
-      <div>
+      {/* <div>
         <h1>{t("title")}</h1>
         <Link href={`/${lng}/second-page`}>{t("to-second-page")}</Link>
-      </div>
+      </div> */}
       <Hero lng={lng} />
       <Bento />
       <About />

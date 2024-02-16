@@ -10,11 +10,11 @@ export default async function Hero({ lng }: any) {
       <MaxWidthWrapper>
         <div className="flex flex-col justify-between pb-1 pt-16 text-left">
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            {t("title")} <br />
+            {t("tagline_top")} <br />
             <span className="text-gradient dark:text-gradient-dark">
-              ВНЖ, ПМЖ и гражданства{" "}
+              {t("tagline_middle")}{" "}
             </span>
-            Республики Польша
+            {t("tagline_bottom")}
           </h1>
         </div>
       </MaxWidthWrapper>
