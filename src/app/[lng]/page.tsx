@@ -19,7 +19,7 @@ export default async function Home({ params: { lng } }: any) {
         <h1>{t("title")}</h1>
         <Link href={`/${lng}/second-page`}>{t("to-second-page")}</Link>
       </div>
-      <Hero />
+      <Hero lng={lng} />
       <Bento />
       <About />
       <Solutions />
