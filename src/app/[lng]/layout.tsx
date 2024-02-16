@@ -27,7 +27,7 @@ export default function RootLayout({
   params: { lng },
 }: {
   children: React.ReactNode;
-  params: { lng: string };
+  params: { lng: any };
 }) {
   return (
     <html lang={lng} dir={dir(lng)} className="h-full">

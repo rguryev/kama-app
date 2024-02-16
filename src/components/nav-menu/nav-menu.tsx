@@ -17,6 +17,7 @@ import Logo from "../logo";
 import { Trans } from "react-i18next/TransWithoutContext";
 import { languages } from "@/app/i18n/settings";
 import { TFunction } from "i18next";
+import { DropdownMenuCheckboxes } from "../dropdown-menu";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -45,11 +46,11 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 interface NavMenuBaseProps {
-  lng: string;
+  lng: any;
   t: TFunction;
 }
 
-const NavMenuBase = async ({ lng, t }: NavMenuBaseProps) => {
+const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
   return (
     <>
       <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
@@ -112,10 +113,10 @@ const NavMenuBase = async ({ lng, t }: NavMenuBaseProps) => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <div className="m-auto flex w-20 justify-center gap-4">
-              {/* <Trans t={t}>
+            {/* <div className="m-auto flex w-20 justify-center gap-4">
+              <Trans t={t}>
                 <strong className="text-lg">{lng}</strong> |
-              </Trans> */}
+              </Trans>
               <div className="cursor-pointer rounded-md bg-foreground px-4 py-1 text-center text-lg font-bold text-background">
                 {languages
                   .filter((l) => lng !== l)
@@ -128,7 +129,8 @@ const NavMenuBase = async ({ lng, t }: NavMenuBaseProps) => {
                     );
                   })}
               </div>
-            </div>
+            </div> */}
+            <DropdownMenuCheckboxes lng={lng} t={t} />
           </NavigationMenuItem>
           <NavigationMenuItem>
             <ModeToggle />

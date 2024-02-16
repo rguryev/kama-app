@@ -15,10 +15,10 @@ import {
 
 import MaxWidthWrapper from "./max-width-wrapper";
 import Logo from "./logo";
-import { NavMenu } from "./nav-menu";
+import { NavMenu } from "./nav-menu/client";
 
 interface NavbarProps {
-  lng: string;
+  lng: any;
 }
 
 const Navbar = ({ lng }: NavbarProps) => {
@@ -47,7 +47,6 @@ object-contain"
                 <SheetHeader>
                   <SheetTitle>Меню</SheetTitle>
                   <SheetDescription>Куда хотите перейти?</SheetDescription>
-                  {/* test */}
                   <NavMenu lng={lng} />
                 </SheetHeader>
               </SheetContent>
