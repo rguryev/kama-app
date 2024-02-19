@@ -1,7 +1,29 @@
 {
+  "navbar.mobile_menu.title": "Menu",
+  "navbar.mobile_menu.description": "Where do you want to go?",
+  "navbar.services": "Services",
+  "navbar.services.subtitle": "The company that is right for you.",
+  "navbar.services.about.title": "About us",
+  "navbar.services.about.description": "Who we are and why you should choose us",
+  "navbar.services.services.title": "Our services",
+  "navbar.services.services.description": "What services we offer",
+  "navbar.services.reviews.title": "Reviews",
+  "navbar.services.reviews.description": "Why you can trust us",
+  "navbar.course": "Our course",
+  "navbar.course.about.title": "About our course",
+  "navbar.course.about.description": "Course information and list of topics.",
+  "navbar.course.billing.title": "Tariffs",
+  "navbar.course.billing.description": "Choose the course for your needs.",
+  "navbar.course.reviews.title": "Reviews of students",
+  "navbar.course.reviews.description": "Reviews of our students.",
+  "navbar.course.additional.title": "Additional information about the course",
+  "navbar.course.additional.description": "Be in the course of the last changes.",
+  "navbar.contact_form": "Contact form",
+  "navbar.language_toggle": "Choose language:",
+
   "title": "Hi there! Internalization test. It's English version",
   "to-second-page": "To second page",
-  "tagline_top": "Assistance in processing",
-  "tagline_middle": "residence permit and citizenship",
-  "tagline_bottom": "of the Republic of Poland."
+  "homepage.hero.tagline_top": "Assistance in processing",
+  "homepage.hero.tagline_middle": "residence permit and citizenship",
+  "homepage.hero.tagline_bottom": "of the Republic of Poland."
 }

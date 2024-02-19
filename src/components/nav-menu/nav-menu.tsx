@@ -11,11 +11,8 @@ import {
 } from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { navLinksCourse, navLinksServices } from "@/constants";
 import { ModeToggle } from "../theme-toggle";
 import Logo from "../logo";
-import { Trans } from "react-i18next/TransWithoutContext";
-import { languages } from "@/app/i18n/settings";
 import { TFunction } from "i18next";
 import { DropdownMenuCheckboxes } from "../dropdown-menu";
 
@@ -51,17 +48,77 @@ interface NavMenuBaseProps {
 }
 
 const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
+  const navLinksServices: {
+    id: string;
+    title: string;
+    href: string;
+    description: string;
+  }[] = [
+    {
+      id: "about",
+      title: t("navbar.services.about.title"),
+      href: "#",
+      description: t("navbar.services.about.description"),
+    },
+    {
+      id: "services",
+      title: t("navbar.services.services.title"),
+      href: "#",
+      description: t("navbar.services.services.description"),
+    },
+    {
+      id: "reviews",
+      title: t("navbar.services.reviews.title"),
+      href: "#",
+      description: t("navbar.services.reviews.description"),
+    },
+  ];
+
+  const navLinksCourse: {
+    id: string;
+    title: string;
+    href: string;
+    description: string;
+  }[] = [
+    {
+      id: "course_about",
+      title: t("navbar.course.about.title"),
+      href: "#",
+      description: t("navbar.course.about.description"),
+    },
+    {
+      id: "course_billing",
+      title: t("navbar.course.billing.title"),
+      href: "#",
+      description: t("navbar.course.about.description"),
+    },
+    {
+      id: "сourse_reviews",
+      title: t("navbar.course.reviews.title"),
+      href: "#",
+      description: t("navbar.course.reviews.description"),
+    },
+    {
+      id: "course_additional",
+      title: t("navbar.course.additional.title"),
+      href: "#",
+      description: t("navbar.course.additional.description"),
+    },
+  ];
+
   return (
     <>
       <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
         <NavigationMenuList
           id="nav-list"
-          className="grid grid-cols-2 gap-1 sm:flex sm:flex-row"
+          className="grid grid-cols-1 gap-1 sm:flex sm:flex-row"
         >
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
+            <NavigationMenuTrigger>
+              {t("navbar.services")}
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-4 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[32rem] md:grid-cols-2 lg:w-[32rem]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
@@ -70,12 +127,12 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
                     >
                       <Logo />
                       <p className="my-2 text-sm leading-tight text-muted-foreground">
-                        Фирма по легализации, которой стоит доверять.
+                        {t("navbar.services.subtitle")}
                       </p>
                     </Link>
                   </NavigationMenuLink>
                 </li>
-                <ul>
+                <ul className="flex flex-col text-left">
                   {navLinksServices.map((component) => (
                     <ListItem
                       key={component.id}
@@ -90,9 +147,9 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Наш курс</NavigationMenuTrigger>
+            <NavigationMenuTrigger>{t("navbar.course")}</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
+              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[32rem] md:grid-cols-2 lg:w-[32rem] ">
                 {navLinksCourse.map((component) => (
                   <ListItem
                     key={component.id}
@@ -108,28 +165,11 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
           <NavigationMenuItem>
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Форма для контакта
+                {t("navbar.contact_form")}
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            {/* <div className="m-auto flex w-20 justify-center gap-4">
-              <Trans t={t}>
-                <strong className="text-lg">{lng}</strong> |
-              </Trans>
-              <div className="cursor-pointer rounded-md bg-foreground px-4 py-1 text-center text-lg font-bold text-background">
-                {languages
-                  .filter((l) => lng !== l)
-                  .map((l, index) => {
-                    return (
-                      <span key={l}>
-                        {index > 0 && " or "}
-                        <Link href={`/${l}`}>{l}</Link>
-                      </span>
-                    );
-                  })}
-              </div>
-            </div> */}
             <DropdownMenuCheckboxes lng={lng} t={t} />
           </NavigationMenuItem>
           <NavigationMenuItem>

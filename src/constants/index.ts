@@ -16,64 +16,7 @@ import {
 } from "../assets";
 
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
-
-export const navLinksServices: {
-  id: string;
-  title: string;
-  href: string;
-  description: string;
-}[] = [
-  {
-    id: "about",
-    title: "О нас",
-    href: "#",
-    description: "Кто мы и почему стоит выбрать нас",
-  },
-  {
-    id: "services",
-    title: "Наши услгуи",
-    href: "#",
-    description: "Какие услуги мы оказываем",
-  },
-  {
-    id: "reviews",
-    title: "Отзывы",
-    href: "#",
-    description: "Почему вы можете нам доверять",
-  },
-];
-
-export const navLinksCourse: {
-  id: string;
-  title: string;
-  href: string;
-  description: string;
-}[] = [
-  {
-    id: "course_about",
-    title: "О нашем курсе",
-    href: "#",
-    description: "Информация о курсе и список тем.",
-  },
-  {
-    id: "course_billing",
-    title: "Тарифы",
-    href: "#",
-    description: "Выберете курс под ваши нужды.",
-  },
-  {
-    id: "сourse_reviews",
-    title: "Отзывы учеников",
-    href: "#",
-    description: "Отзывы наших учеников.",
-  },
-  {
-    id: "course_additional",
-    title: "Дополнительная информация о курсе",
-    href: "#",
-    description: "Будьте в курсе последних изменений.",
-  },
-];
+import i18next from "i18next";
 
 export const workflowStages: {
   id: string;

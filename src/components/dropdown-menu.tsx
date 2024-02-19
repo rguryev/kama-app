@@ -39,8 +39,8 @@ export function DropdownMenuCheckboxes({
           <Languages />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-36" align="center">
-        <DropdownMenuLabel>Выбирете язык</DropdownMenuLabel>
+      <DropdownMenuContent className="w-[153px]" align="center">
+        <DropdownMenuLabel>{t("navbar.language_toggle")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
 
         {languages

@@ -1,7 +1,29 @@
 {
+  "navbar.mobile_menu.title": "Меню",
+  "navbar.mobile_menu.description": "Куда хотите перейти?",
+  "navbar.services": "Услуги",
+  "navbar.services.subtitle": "Фирма по легализации, которой стоит доверять.",
+  "navbar.services.about.title": "О нас",
+  "navbar.services.about.description": "Кто мы и почему стоит выбрать нас",
+  "navbar.services.services.title": "Наши услуги",
+  "navbar.services.services.description": "Какие услуги мы оказываем",
+  "navbar.services.reviews.title": "Отзывы",
+  "navbar.services.reviews.description": "Почему вы можете нам доверять",
+  "navbar.course": "Наш курс",
+  "navbar.course.about.title": "О нашем курсе",
+  "navbar.course.about.description": "Информация о курсе и список тем.",
+  "navbar.course.billing.title": "Тарифы",
+  "navbar.course.billing.description": "Выберете курс под ваши нужды.",
+  "navbar.course.reviews.title": "Отзывы учеников",
+  "navbar.course.reviews.description": "Отзывы наших учеников.",
+  "navbar.course.additional.title": "Дополнительная информация о курсе",
+  "navbar.course.additional.description": "Будьте в курсе последних изменений.",
+  "navbar.contact_form": "Форма для контакта",
+  "navbar.language_toggle": "Выбирете язык:",
+
   "title": "Привет! Тест интернализации. Это русская версия",
   "to-second-page": "К второй странице",
-  "tagline_top": "Помощь в оформлении",
-  "tagline_middle": "ВНЖ, ПМЖ и гражданства",
-  "tagline_bottom": "Республики Польша."
+  "homepage.hero.tagline_top": "Помощь в оформлении",
+  "homepage.hero.tagline_middle": "ВНЖ, ПМЖ и гражданства",
+  "homepage.hero.tagline_bottom": "Республики Польша."
 }

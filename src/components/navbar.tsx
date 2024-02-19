@@ -16,12 +16,14 @@ import {
 import MaxWidthWrapper from "./max-width-wrapper";
 import Logo from "./logo";
 import { NavMenu } from "./nav-menu/client";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   lng: any;
 }
 
 const Navbar = ({ lng }: NavbarProps) => {
+  const { t, i18n } = useTranslation();
   return (
     // <nav className="sticky inset-x-0 top-0 z-50 h-20 bg-slate-100">
     <MaxWidthWrapper className="sticky top-0 z-50 h-full sm:top-4">
@@ -45,8 +47,10 @@ object-contain"
               </SheetTrigger>
               <SheetContent side={"right"}>
                 <SheetHeader>
-                  <SheetTitle>Меню</SheetTitle>
-                  <SheetDescription>Куда хотите перейти?</SheetDescription>
+                  <SheetTitle>{t("navbar.mobile_menu.title")}</SheetTitle>
+                  <SheetDescription>
+                    {t("navbar.mobile_menu.description")}
+                  </SheetDescription>
                   <NavMenu lng={lng} />
                 </SheetHeader>
               </SheetContent>
