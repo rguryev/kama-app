@@ -42,8 +42,6 @@ export default function RootLayout({
         >
           <div className="absolute right-[11rem] top-[13rem] -z-10 h-[50rem] w-[31.25rem] rounded-full bg-[#fbd2d3] blur-[10rem] sm:w-[68.75rem] dark:bg-[#e15a8b]"></div>
           <div className="absolute left-[-35rem] top-[8rem] -z-10 h-[50rem] w-[50rem] rounded-full bg-[#dbd7fb] blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#5b2573]"></div>
-          {/* <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-[#fbe2e3] blur-[10rem] sm:w-[68.75rem] dark:bg-[#fccdcf]"></div>
-          <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-[#dbd7fb] blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#ecd0ff]"></div> */}
 
           <main className="relative flex min-h-screen flex-col ">
             <Navbar lng={lng} />
