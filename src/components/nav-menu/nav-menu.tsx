@@ -118,7 +118,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
               {t("navbar.services")}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[32rem] md:grid-cols-2 lg:w-[32rem]">
+              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2 lg:w-[31rem]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
@@ -149,7 +149,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
           <NavigationMenuItem>
             <NavigationMenuTrigger>{t("navbar.course")}</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[32rem] md:grid-cols-2 lg:w-[32rem] ">
+              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2 lg:w-[31rem] ">
                 {navLinksCourse.map((component) => (
                   <ListItem
                     key={component.id}

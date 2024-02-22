@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 
 import {
   Form,
@@ -9,35 +9,42 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { Textarea } from "./ui/textarea";
-import MaxWidthWrapper from "./max-width-wrapper";
-import TitleContainer from "./title-container";
-import Container from "./container";
+import { Textarea } from "../ui/textarea";
+import MaxWidthWrapper from "../max-width-wrapper";
+import TitleContainer from "../title-container";
+import Container from "../container";
 import { sendMessage } from "@/api/telegram";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from "@/app/i18n/client";
+import i18next, { TFunction } from "i18next";
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "В имени должно быть больше одной буквы",
-  }),
-  phone: z.string().refine((value) => /^\+?[1-9]\d{8,11}$/.test(value), {
-    message: "Неправильно введен номер",
-  }),
-  message: z.string().min(10, {
-    message: "Сообщение слишком короткое",
-  }),
-});
-
-const Contact = () => {
+interface ContactProps {
+  lng: any;
+  t: TFunction;
+}
+const Contact: FC<ContactProps> = ({ lng }: any) => {
+  const { t } = useTranslation(lng, "contact");
+  const currentLanguage = i18next.language;
+  const formSchema = z.object({
+    username: z.string().min(2, {
+      message: t("homepage.contact.error.username"),
+    }),
+    phone: z.string().refine((value) => /^\+?[1-9]\d{8,11}$/.test(value), {
+      message: t("homepage.contact.error.phone"),
+    }),
+    message: z.string().min(10, {
+      message: t("homepage.contact.error.message"),
+    }),
+  });
   const [isLoading, setIsLoading] = React.useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -71,10 +78,10 @@ const Contact = () => {
       <MaxWidthWrapper className="mb-8 mt-24 max-w-[50rem]">
         <TitleContainer>
           <h1 className="text-center font-bold tracking-tight text-gray-900 dark:text-white">
-            Свяжитесь со мной
+            {t("homepage.contact.title")}
           </h1>
           <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
-            Хотите легализоваться или купить курс? Оставляйте заявку!
+            {t("homepage.contact.description")}
           </p>
         </TitleContainer>
 
@@ -86,11 +93,18 @@ const Contact = () => {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">Имя</FormLabel>
+                    <FormLabel className="text-md">
+                      {t("homepage.contact.name.label")}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Имя" {...field} />
+                      <Input
+                        placeholder={t("homepage.contact.name.placeholder")}
+                        {...field}
+                      />
                     </FormControl>
-                    <FormDescription>Введите ваше имя.</FormDescription>
+                    <FormDescription>
+                      {t("homepage.contact.name.description")}
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -100,12 +114,17 @@ const Contact = () => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">Номер телефона</FormLabel>
+                    <FormLabel className="text-md">
+                      {t("homepage.contact.phone.label")}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="123235235" {...field} />
+                      <Input
+                        placeholder={t("homepage.contact.phone.placeholder")}
+                        {...field}
+                      />
                     </FormControl>
                     <FormDescription>
-                      Введите ваш номер телефона.
+                      {t("homepage.contact.phone.description")}
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -116,11 +135,18 @@ const Contact = () => {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">Сообщение</FormLabel>
+                    <FormLabel className="text-md">
+                      {t("homepage.contact.message.label")}
+                    </FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Напишите нам" {...field} />
+                      <Textarea
+                        placeholder={t("homepage.contact.message.placeholder")}
+                        {...field}
+                      />
                     </FormControl>
-                    <FormDescription>Введите ваше сообщение.</FormDescription>
+                    <FormDescription>
+                      {t("homepage.contact.message.description")}
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -131,21 +157,23 @@ const Contact = () => {
                 onClick={() => {
                   if (form.formState.isValid) {
                     const currentDate = new Date();
-                    const formattedDate = currentDate.toLocaleString("ru-Ru", {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                    });
+                    const formattedDate = currentDate.toLocaleString(
+                      currentLanguage,
+                      {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                      },
+                    );
 
-                    // Валидация успешна, выполните отправку данных и отобразите toast
-                    toast("Ваша заявка принята, скоро мы с вами свяжемся", {
+                    toast(t("homepage.contact.toast.description"), {
                       description: formattedDate,
                       action: {
-                        label: "Закрыть",
+                        label: t("homepage.contact.toast.button"),
                         onClick: () => console.log("Undo"),
                       },
                     });
@@ -155,10 +183,10 @@ const Contact = () => {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Please wait
+                    {t("homepage.contact.loading")}
                   </>
                 ) : (
-                  "Отправить"
+                  t("homepage.contact.button")
                 )}
               </Button>
             </form>

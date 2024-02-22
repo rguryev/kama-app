@@ -27,7 +27,7 @@ const Navbar = ({ lng }: NavbarProps) => {
   return (
     // <nav className="sticky inset-x-0 top-0 z-50 h-20 bg-slate-100">
     <MaxWidthWrapper className="sticky top-0 z-50 h-full sm:top-4">
-      <nav className=" mx-auto h-[4rem] w-full max-w-screen-xl rounded-none border border-white border-opacity-40 bg-white px-2.5 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:rounded-full md:px-20 dark:border-black/40 dark:bg-gray-950 dark:bg-opacity-75">
+      <nav className=" mx-auto h-[4rem] w-full max-w-screen-xl rounded-full border border-white border-opacity-40 bg-white px-2.5 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:rounded-full md:px-10 dark:border-black/40 dark:bg-black">
         <div className="flex h-full items-center justify-center border-gray-200">
           <Logo />
 
