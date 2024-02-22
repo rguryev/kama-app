@@ -14,16 +14,16 @@ export default async function Home({ params: { lng } }: any) {
   const { t } = await useTranslation(lng);
   return (
     <>
-      {/* <Hero lng={lng} />
+      <Hero lng={lng} />
       <Bento lng={lng} />
       <About />
       <Solutions />
       <Workflow />
-      <Pricing /> */}
+      <Pricing />
       <Reviews lng={lng} />
-      {/* <Target />
+      <Target />
       <CoursePricing />
-      <Contact lng={lng} /> */}
+      <Contact lng={lng} />
     </>
   );
 }

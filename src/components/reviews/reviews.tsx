@@ -22,7 +22,6 @@ import { AlertTriangle } from "lucide-react";
 
 interface ReviewsProps {
   lng: any;
-  t: TFunction;
 }
 
 const Reviews: FC<ReviewsProps> = ({ lng }: any) => {
@@ -123,7 +122,6 @@ const Reviews: FC<ReviewsProps> = ({ lng }: any) => {
           <CarouselNext />
         </Carousel>
         <div className="py-2 text-center text-sm text-muted-foreground">
-          {/* Slide {current} of {count} */}
           {t("homepage.reviews.counter", {
             current: current,
             count: count,
