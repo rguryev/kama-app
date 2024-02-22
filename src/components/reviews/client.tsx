@@ -5,7 +5,7 @@ import ReviewsBase from "./reviews";
 
 const Reviews = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, "reviews");
-  return <ReviewsBase t={t} lng={lng} />;
+  return <ReviewsBase lng={lng} />;
 };
 
 export default Reviews;

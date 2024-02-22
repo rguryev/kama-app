@@ -3,5 +3,5 @@ import ReviewsBase from "./reviews";
 
 export const NavMenu = async ({ lng }: { lng: string }) => {
   const { t } = await useTranslation(lng, "reviews");
-  return <ReviewsBase t={t} lng={lng} />;
+  return <ReviewsBase lng={lng} />;
 };
