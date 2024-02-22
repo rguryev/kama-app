@@ -68,6 +68,14 @@
   "homepage.contact.message.placeholder": "Напишите нам",
   "homepage.contact.message.description": "Введите ваше сообщение.",
 
+  "homepage.reviews.title": "Отзывы наших клиентов",
+  "homepage.reviews.description": "Почему вы можете нам доверять",
+  "homepage.reviews.counter": "Слайд {{current}} из {{count}}",
+  "homepage.reviews.review_1": "/images/review1.jpg",
+  "homepage.reviews.review_2": "/images/review2.jpg",
+  "homepage.reviews.review_3": "/images/review3.jpg",
+  "homepage.reviews.review_4": "/images/review4.jpg",
+
   "homepage.contact.button": "Отправить",
   "homepage.contact.loading": "Подождите...",
   "homepage.contact.toast.description": "Ваша заявка принята, скоро мы с вами свяжемся.",

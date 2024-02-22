@@ -53,6 +53,16 @@
   "homepage.bento.offering.promo": "promo",
   "homepage.bento.offering_permission.title": "Obtaining a residence permit",
 
+  "homepage.reviews.title": "Reviews about us",
+  "homepage.reviews.description": "Why you can trust us",
+  "homepage.reviews.en_disclaimer.title": "Translated screenshots",
+  "homepage.reviews.en_disclaimer.description": "To see the original, switch to the Ru version.",
+  "homepage.reviews.counter": "Slide {{current}} of {{count}}",
+  "homepage.reviews.review_1": "/images/review1en.jpg",
+  "homepage.reviews.review_2": "/images/review2en.jpg",
+  "homepage.reviews.review_3": "/images/review3en.jpg",
+  "homepage.reviews.review_4": "/images/review4en.jpg",
+
   "homepage.contact.title": "Contact us",
   "homepage.contact.description": "Want to legalize yourself or buy the course? Leave a request.",
   "homepage.contact.error.username": "Name must be more than one letter",
