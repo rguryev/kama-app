@@ -7,6 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -108,17 +109,17 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
 
   return (
     <>
-      <NavigationMenu id="nav" className="m-auto gap-6 sm:m-0">
+      <NavigationMenu id="nav" className="m-auto gap-6 text-center sm:m-0 ">
         <NavigationMenuList
           id="nav-list"
           className="grid grid-cols-1 gap-1 sm:flex sm:flex-row"
         >
-          <NavigationMenuItem>
+          <NavigationMenuItem className="order-4 md:order-1">
             <NavigationMenuTrigger>
               {t("navbar.services")}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2 lg:w-[31rem]">
+              <ul className="grid h-[26rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
@@ -126,7 +127,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
                       href={"/"}
                     >
                       <Logo />
-                      <p className="my-2 text-sm leading-tight text-muted-foreground">
+                      <p className="my-2 text-left text-sm leading-tight text-muted-foreground">
                         {t("navbar.services.subtitle")}
                       </p>
                     </Link>
@@ -146,10 +147,10 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="order-3 md:order-2">
             <NavigationMenuTrigger>{t("navbar.course")}</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid h-[20rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2 lg:w-[31rem] ">
+              <ul className="grid h-[26rem] gap-1 p-4 text-left md:h-[16rem] md:w-[31rem] md:grid-cols-2">
                 {navLinksCourse.map((component) => (
                   <ListItem
                     key={component.id}
@@ -162,19 +163,21 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="order-2 md:order-3">
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 {t("navbar.contact_form")}
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <DropdownMenuCheckboxes lng={lng} t={t} />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <ModeToggle />
-          </NavigationMenuItem>
+          <div className="order-1 flex flex-row justify-center gap-2 md:order-4">
+            <NavigationMenuItem>
+              <DropdownMenuCheckboxes lng={lng} t={t} />
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <ModeToggle />
+            </NavigationMenuItem>
+          </div>
         </NavigationMenuList>
       </NavigationMenu>
     </>
