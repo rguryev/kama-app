@@ -51,14 +51,14 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
     <Card
       key={plan.id}
       className={
-        "relative grid grid-cols-1 gap-2 rounded-3xl bg-stone-50 p-6 pt-10 text-sm shadow-priceCard dark:bg-black"
+        "relative grid grid-cols-1 gap-2 rounded-3xl bg-card p-6 pt-10 text-sm drop-shadow-xl "
       }
     >
       <CardHeader className="p-2">
         <CardTitle className="font-display mb-3 text-left text-2xl font-semibold">
           {plan.title}
         </CardTitle>
-        <CardDescription className="max-h-28 max-w-prose text-wrap text-left text-gray-700 sm:h-32">
+        <CardDescription className="max-h-28 max-w-prose text-wrap text-left text-foreground sm:h-32">
           {plan.tagline}
         </CardDescription>
         <p className="font-display mb-2 mt-2 text-left text-4xl font-semibold sm:pt-1">
@@ -67,7 +67,7 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
       </CardHeader>
       <CardContent className="p-0">
         <TooltipProvider>
-          <div className="flex h-10 rounded-2xl border-gray-600 bg-gray-100 shadow-compact dark:border-gray-800 dark:bg-gray-900">
+          <div className="flex h-10 rounded-2xl border-gray-600 bg-card shadow-compact">
             <div className="mx-auto flex items-center space-x-0  text-sm">
               <p className="text-center">
                 Продолжительность курса {plan.quota.toLocaleString()} месяц
@@ -89,16 +89,16 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
               <li key={text} className="flex space-x-1">
                 <div className="flex-shrink-0">
                   {negative ? (
-                    <Minus className="h-6 w-6 text-gray-300" />
+                    <Minus className="h-6 w-6 text-gray-300 dark:text-gray-700" />
                   ) : (
-                    <Check className="h-6 w-6 text-gray-700" />
+                    <Check className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                   )}
                 </div>
                 {footnote ? (
                   <div className="flex items-center space-x-1">
                     <p
-                      className={cn("text-gray-600", {
-                        "text-gray-400": negative,
+                      className={cn("text-gray-600 dark:text-gray-300", {
+                        "text-gray-400 dark:text-gray-600": negative,
                       })}
                     >
                       {text}
@@ -114,9 +114,12 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
                   </div>
                 ) : (
                   <p
-                    className={cn("text-left text-gray-600", {
-                      "text-gray-400": negative,
-                    })}
+                    className={cn(
+                      "text-left text-gray-600 dark:text-gray-300",
+                      {
+                        "text-gray-400 dark:text-gray-600": negative,
+                      },
+                    )}
                   >
                     {text}
                   </p>

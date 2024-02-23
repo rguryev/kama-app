@@ -40,30 +40,28 @@ const pageInfo: IPageInfo = {
 const Target = () => {
   return (
     <section id="target">
-      <MaxWidthWrapper className="mb-8 mt-24 rounded-xxl bg-card text-center">
+      <MaxWidthWrapper className="mb-8 mt-24 rounded-xxl bg-card text-center drop-shadow-xl">
         <SectionContainer>
-          <TitleContainer>
+          <TitleContainer className="text-foreground">
             <Badge pageInfo={pageInfo} />
-            <h1>
-              Для кого этот <span className="text-orange-600">курс</span>?
-            </h1>
+            <h1>Для кого этот курс?</h1>
           </TitleContainer>
 
-          <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
+          <div className="mx-10 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
             {perks.map((perk) => (
               <div
                 key={perk.name}
-                className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
+                className="mx-auto flex w-80 justify-around text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
                 <div className="flex justify-center md:flex-shrink-0">
-                  <CompactWrap className="h-16 w-16 items-center justify-center rounded-full bg-slate-50 text-slate-700 ">
+                  <CompactWrap className="text-f h-16 w-16 justify-center rounded-full bg-card ">
                     {<perk.Icon className="h-1/3 w-1/3" />}
                   </CompactWrap>
                 </div>
 
-                <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
+                <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-4">
                   <h3 className="text-xl font-medium">{perk.name}</h3>
-                  <p className="mt-3 text-base text-muted-foreground">
+                  <p className="mt-3 text-left text-base text-muted-foreground">
                     {perk.description}
                   </p>
                 </div>

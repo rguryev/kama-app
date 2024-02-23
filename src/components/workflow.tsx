@@ -69,10 +69,10 @@ const Workflow = () => {
           {workflowStages.map((item) => (
             <Container
               key={item.id}
-              className="mx-auto flex w-full p-2 text-left align-middle shadow-priceCard sm:w-[40rem]"
+              className="mx-auto flex w-full bg-card p-2 text-left align-middle drop-shadow-xl sm:w-[40rem]"
             >
               <div className="flex items-center justify-center">
-                <CompactWrap className="m-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-800 sm:m-5 sm:h-16 sm:w-16 dark:bg-slate-600">
+                <CompactWrap className="m-2 flex h-12 w-12 items-center justify-center rounded-full bg-card text-gray-800 sm:m-5 sm:h-16 sm:w-16">
                   {/* {<item.Icon className="h-1/3 w-1/3" />} */}
                   <span className="text-xl text-gray-600 sm:text-4xl dark:text-white">
                     {item.id}

@@ -85,15 +85,18 @@ const Contact: FC<ContactProps> = ({ lng }: any) => {
           </p>
         </TitleContainer>
 
-        <Container className="mx-4 bg-gray-50 shadow-priceCard ">
+        <Container className="mx-4 bg-card drop-shadow-xl ">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="mx-auto my-5 flex max-w-[40rem] flex-col space-y-5"
+            >
               <FormField
                 control={form.control}
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">
+                    <FormLabel className="text-lg">
                       {t("homepage.contact.name.label")}
                     </FormLabel>
                     <FormControl>
@@ -114,7 +117,7 @@ const Contact: FC<ContactProps> = ({ lng }: any) => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">
+                    <FormLabel className="text-lg">
                       {t("homepage.contact.phone.label")}
                     </FormLabel>
                     <FormControl>
@@ -135,7 +138,7 @@ const Contact: FC<ContactProps> = ({ lng }: any) => {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-md">
+                    <FormLabel className="text-lg">
                       {t("homepage.contact.message.label")}
                     </FormLabel>
                     <FormControl>
@@ -154,6 +157,7 @@ const Contact: FC<ContactProps> = ({ lng }: any) => {
               <Button
                 disabled={isLoading}
                 type="submit"
+                className="w-40"
                 onClick={() => {
                   if (form.formState.isValid) {
                     const currentDate = new Date();

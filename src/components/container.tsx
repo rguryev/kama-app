@@ -11,12 +11,7 @@ const Container = ({
   children: ReactNode;
 }) => {
   return (
-    <div
-      className={cn(
-        "rounded-3xl bg-slate-50 p-5 dark:bg-slate-900 dark:text-white",
-        className,
-      )}
-    >
+    <div className={cn("rounded-3xl bg-card p-5 dark:text-white", className)}>
       {children}
     </div>
   );

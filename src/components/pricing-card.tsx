@@ -43,7 +43,7 @@ const PricingCard: FC<PricingCardProps> = ({ plan, className, ...props }) => {
     <Card
       key={plan.id}
       className={cn(
-        "relative grid grid-cols-1 gap-2 rounded-3xl bg-stone-50 p-5 pt-10 shadow-priceCard sm:p-2 dark:bg-black",
+        "relative grid grid-cols-1 gap-2 rounded-3xl bg-card p-5 pt-10 drop-shadow-xl sm:p-2 ",
         className,
       )}
       {...props}
@@ -52,7 +52,7 @@ const PricingCard: FC<PricingCardProps> = ({ plan, className, ...props }) => {
         <CardTitle className="font-display mb-3 mt-5 text-left text-2xl font-semibold">
           {plan.title}
         </CardTitle>
-        <CardDescription className="h-8 text-left text-base text-gray-500">
+        <CardDescription className="h-8 text-left text-base text-foreground">
           {plan.tagline}
         </CardDescription>
         <p className="font-display pb-4 pt-3 text-left text-4xl font-semibold sm:pt-1">

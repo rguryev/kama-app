@@ -46,11 +46,11 @@ const Solutions = () => {
             </p>
           </TitleContainer>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
+          <div className="mx-2 grid grid-cols-1 gap-4 sm:mx-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
             {perks.map((perk) => (
               <div
                 key={perk.id}
-                className="py-4 text-center sm:py-10 md:flex md:items-start md:text-left lg:block lg:text-center"
+                className="py-4 text-left sm:py-10 sm:text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
                 <div className="flex justify-center md:flex-shrink-0">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 text-gray-800 shadow-compact ">
@@ -58,8 +58,8 @@ const Solutions = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
-                  <p className="mt-3 text-base text-muted-foreground">
+                <div className="mt-0 flex justify-center md:ml-4 md:mt-0 lg:ml-0 lg:mt-2">
+                  <p className="mt-3 w-80 text-base text-muted-foreground">
                     {perk.description}
                   </p>
                 </div>

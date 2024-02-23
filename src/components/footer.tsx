@@ -65,9 +65,9 @@ const Footer = () => {
   ];
 
   return (
-    <section id="footer">
+    <section id="footer" className="bg-card">
       <MaxWidthWrapper>
-        <footer className="bg-white dark:bg-gray-950">
+        <footer>
           <div className="container mx-auto px-6 py-12">
             <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
