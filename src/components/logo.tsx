@@ -8,13 +8,13 @@ interface LogoProps {}
 const Logo: FC<LogoProps> = ({}) => {
   return (
     <>
-      <Link href={"#"} className="relative right-5 flex flex-row">
+      <Link href={"#"} className="relative flex flex-row">
         <Image
           alt="Kate Matveeva Logo"
           color="slate"
           src={LogoImage}
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           quality={100}
         />
       </Link>
