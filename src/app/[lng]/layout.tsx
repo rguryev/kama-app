@@ -32,10 +32,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} className="h-full">
       <body
-        className={cn(
-          "relative h-full overflow-x-hidden font-sans antialiased",
-          inter.className,
-        )}
+        className={cn("relative h-full font-sans antialiased", inter.className)}
       >
         <ThemeProvider
           attribute="class"

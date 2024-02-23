@@ -22,7 +22,7 @@ const About = ({ item }: { item: GridItemInterface }) => {
       {/* Content 1 */}
       <div className="relative my-2 flex w-full flex-grow flex-col flex-wrap items-center justify-around gap-3 space-y-3 px-2">
         <div className="flex w-full flex-row justify-between">
-          <div className="flex rounded-2xl bg-background p-2 px-4 text-2xl font-medium text-foreground dark:bg-backgroundAlt dark:text-foreground">
+          <div className="flex rounded-2xl bg-background p-2 px-4 text-xl font-medium text-foreground dark:bg-backgroundAlt dark:text-foreground">
             {item.title}
           </div>
           <div className="flex self-end rounded-xl bg-background dark:bg-backgroundAlt">

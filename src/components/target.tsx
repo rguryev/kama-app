@@ -51,7 +51,7 @@ const Target = () => {
             {perks.map((perk) => (
               <div
                 key={perk.name}
-                className="mx-auto flex w-80 justify-around text-center md:flex md:items-start md:text-left lg:block lg:text-center"
+                className="mx-auto w-80 justify-around text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
                 <div className="flex justify-center md:flex-shrink-0">
                   <CompactWrap className="text-f h-16 w-16 justify-center rounded-full bg-card ">
