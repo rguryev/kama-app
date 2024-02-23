@@ -8,7 +8,7 @@ export default async function Hero({ lng }: any) {
   return (
     <section id="hero">
       <MaxWidthWrapper>
-        <div className="flex flex-col justify-between pb-10 pt-72 text-left sm:flex-row">
+        <div className="flex flex-col justify-between pb-10 pt-60 text-left sm:flex-row sm:pt-72">
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
             {t("homepage.hero.tagline_top")} <br />
             <span className="text-gradient dark:text-gradient-dark">

@@ -77,6 +77,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    @apply overflow-x-clip;
+    @apply overflow-x-hidden;
   }
 }
