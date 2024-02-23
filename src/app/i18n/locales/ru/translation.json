@@ -79,5 +79,24 @@
   "homepage.contact.button": "Отправить",
   "homepage.contact.loading": "Подождите...",
   "homepage.contact.toast.description": "Ваша заявка принята, скоро мы с вами свяжемся.",
-  "homepage.contact.toast.button": "Закрыть"
+  "homepage.contact.toast.button": "Закрыть",
+
+  "footer.contact.title": "Напишите адрес вашей почты если у вас возникли вопросы, мы с радостью вам ответим!",
+  "footer.contact.button": "Отправить",
+  "footer.services.title": "Услуги по легализации",
+  "footer.services.about.title": "О нас",
+  "footer.services.about.description": "Кто мы и почему стоит выбрать нас",
+  "footer.services.services.title": "Наши услуги",
+  "footer.services.services.description": "Какие услуги мы оказываем",
+  "footer.services.reviews.title": "Отзывы",
+  "footer.services.reviews.description": "Почему вы можете нам доверять",
+  "footer.сourse.title": "Курсы по легализации",
+  "footer.сourse.about.title": "О нашем курсе",
+  "footer.сourse.about.description": "Информация о курсе и список тем.",
+  "footer.сourse.pricing.title": "Тарифы",
+  "footer.сourse.pricing.description": "Выберете курс под ваши нужды.",
+  "footer.сourse.reviews.title": "Отзывы учеников",
+  "footer.сourse.reviews.description": "Отзывы наших учеников.",
+  "footer.сourse.additional.title": "Дополнительная информация о курсе",
+  "footer.сourse.additional.description": "Будьте в курсе последних изменений."
 }

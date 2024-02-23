@@ -81,5 +81,24 @@
   "homepage.contact.button": "Send",
   "homepage.contact.loading": "Please wait...",
   "homepage.contact.toast.description": "Your request has been accepted, we will contact you soon.",
-  "homepage.contact.toast.button": "Close"
+  "homepage.contact.toast.button": "Close",
+
+  "footer.contact.title": "Write your email if you have any questions, we will contact you soon!",
+  "footer.contact.button": "Send",
+  "footer.services.title": "Our services",
+  "footer.services.about.title": "About us",
+  "footer.services.about.description": "Who we are and why you should choose us",
+  "footer.services.services.title": "Our services",
+  "footer.services.services.description": "What we do",
+  "footer.services.reviews.title": "Reviews about us",
+  "footer.services.reviews.description": "Why you can trust us",
+  "footer.сourse.title": "Our course on legalization",
+  "footer.сourse.about.title": "About our course",
+  "footer.сourse.about.description": "Information about the course and list of topics.",
+  "footer.сourse.pricing.title": "Pricing",
+  "footer.сourse.pricing.description": "Choose the course according to your needs.",
+  "footer.сourse.reviews.title": "Reviews of our students",
+  "footer.сourse.reviews.description": "Reviews of our students.",
+  "footer.сourse.additional.title": "Additional information about the course",
+  "footer.сourse.additional.description": "Be in the course of the last changes."
 }

@@ -1,11 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import { Input } from "./ui/input";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Logo from "./logo";
+import { useTranslation } from "@/app/i18n";
+import { TFunction } from "i18next";
 
-const Footer = () => {
+interface FooterProps {
+  lng: any;
+}
+const Footer: FC<FooterProps> = async ({ lng }: any) => {
+  const { t } = await useTranslation(lng);
   const navLinksServices: {
     id: string;
     title: string;
@@ -14,21 +20,21 @@ const Footer = () => {
   }[] = [
     {
       id: "about",
-      title: "О нас",
+      title: t("footer.services.about.title"),
       href: "#",
-      description: "Кто мы и почему стоит выбрать нас",
+      description: t("footer.services.about.description"),
     },
     {
       id: "services",
-      title: "Наши услгуи",
+      title: t("footer.services.services.title"),
       href: "#",
-      description: "Какие услуги мы оказываем",
+      description: t("footer.services.services.description"),
     },
     {
       id: "reviews",
-      title: "Отзывы",
+      title: t("footer.services.reviews.title"),
       href: "#",
-      description: "Почему вы можете нам доверять",
+      description: t("footer.services.reviews.description"),
     },
   ];
 
@@ -40,27 +46,27 @@ const Footer = () => {
   }[] = [
     {
       id: "course_about",
-      title: "О нашем курсе",
+      title: t("footer.сourse.about.title"),
       href: "#",
-      description: "Информация о курсе и список тем.",
+      description: t("footer.сourse.about.description"),
     },
     {
       id: "course_billing",
-      title: "Тарифы",
+      title: t("footer.сourse.pricing.title"),
       href: "#",
-      description: "Выберете курс под ваши нужды.",
+      description: t("footer.сourse.pricing.description"),
     },
     {
       id: "сourse_reviews",
-      title: "Отзывы учеников",
+      title: t("footer.сourse.reviews.title"),
       href: "#",
-      description: "Отзывы наших учеников.",
+      description: t("footer.сourse.reviews.description"),
     },
     {
       id: "course_additional",
-      title: "Дополнительная информация о курсе",
+      title: t("footer.сourse.additional.title"),
       href: "#",
-      description: "Будьте в курсе последних изменений.",
+      description: t("footer.сourse.additional.description"),
     },
   ];
 
@@ -74,19 +80,18 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
               <div className="sm:col-span-2">
                 <h1 className="text-md max-w-lg font-semibold tracking-tight text-gray-800 xl:text-xl dark:text-white">
-                  Напишите адрес вашей почты если у вас возникли вопросы, мы с
-                  радостью вам ответим!
+                  {t("footer.contact.title")}
                 </h1>
 
                 <div className="mx-auto mt-6 flex flex-col space-y-3 md:flex-row md:space-y-0">
                   <Input type="email" placeholder="Email" className="mr-4" />
-                  <Button>Отправить</Button>
+                  <Button>{t("footer.contact.button")}</Button>
                 </div>
               </div>
 
               <div>
                 <p className="font-semibold text-gray-800 dark:text-white">
-                  Услуги по легализации
+                  {t("footer.services.title")}
                 </p>
 
                 <ul className="mt-5 flex flex-col items-start space-y-2">
@@ -105,7 +110,7 @@ const Footer = () => {
 
               <div>
                 <p className="font-semibold text-gray-800 dark:text-white">
-                  Курсы по легализации
+                  {t("footer.сourse.title")}
                 </p>
 
                 <ul className="mt-5 flex flex-col items-start space-y-2">
