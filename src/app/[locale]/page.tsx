@@ -1,29 +1,29 @@
 import About from "@/components/about";
-import Contact from "@/components/contact/client";
 import CoursePricing from "@/components/course-pricing";
 import Hero from "@/components/hero";
 import Pricing from "@/components/pricing";
-import Reviews from "@/components/reviews/reviews";
+import Reviews from "@/components/reviews";
 import Solutions from "@/components/solutions";
 import Target from "@/components/target";
 import Workflow from "@/components/workflow";
-import { useTranslation } from "../i18n";
 import Bento from "@/components/bento";
-
-export default async function Home({ params: { lng } }: any) {
-  const { t } = await useTranslation(lng);
+import Contact from "@/components/contact";
+import { useTranslations } from "next-intl";
+export default function Home({ params: { lng } }: any) {
+  const t = useTranslations("Navbar");
   return (
     <>
-      <Hero lng={lng} />
-      <Bento lng={lng} />
+      <h1>{t("mobile_menu_description")}</h1>
+      {/* <Hero />
+      <Bento />
       <About />
       <Solutions />
       <Workflow />
       <Pricing />
-      <Reviews lng={lng} />
+      <Reviews />
       <Target />
       <CoursePricing />
-      <Contact lng={lng} />
+      <Contact /> */}
     </>
   );
 }

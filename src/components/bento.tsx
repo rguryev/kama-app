@@ -9,11 +9,6 @@ import About from "./grid-items/about";
 import Offerings from "./grid-items/offerings";
 import Title from "./grid-items/title";
 import MaxWidthWrapper from "./max-width-wrapper";
-import { useTranslation } from "@/app/i18n";
-
-interface BentoProps {
-  lng: any;
-}
 
 export type GridItemLayout =
   | "1x2"
@@ -67,7 +62,7 @@ export interface GridItemInterface {
   email?: string;
 }
 
-const Bento: FC<BentoProps> = async ({ lng }: any) => {
+const Bento = async () => {
   const { t } = await useTranslation(lng);
   const GridItems: GridItemInterface[] = [
     {

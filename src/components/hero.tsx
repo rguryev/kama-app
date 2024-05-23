@@ -1,9 +1,8 @@
 import React from "react";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { useTranslation } from "@/app/i18n";
 
 // const Hero = async ({ params: { lng } }: any) => {
-export default async function Hero({ lng }: any) {
+export default async function Hero() {
   const { t } = await useTranslation(lng);
   return (
     <section id="hero">

@@ -1,0 +1,25 @@
+{
+  "Navbar": {
+    "mobile_menu_title": "Меню",
+    "mobile_menu_description": "Куда хотите перейти?",
+    "services": "Услуги",
+    "services_subtitle": "Фирма по легализации, которой стоит доверять_",
+    "services_about_title": "О нас",
+    "services_about_description": "Кто мы и почему стоит выбрать нас",
+    "services_services_title": "Наши услуги",
+    "services_services_description": "Какие услуги мы оказываем",
+    "services_reviews_title": "Отзывы",
+    "services_reviews_description": "Почему вы можете нам доверять",
+    "course": "Наш курс",
+    "course_about_title": "О нашем курсе",
+    "course_about_description": "Информация о курсе и список тем_",
+    "course_billing_title": "Тарифы",
+    "course_billing_description": "Выберете курс под ваши нужды_",
+    "course_reviews_title": "Отзывы учеников",
+    "course_reviews_description": "Отзывы наших учеников_",
+    "course_additional_title": "Дополнительная информация о курсе",
+    "course_additional_description": "Будьте в курсе последних изменений_",
+    "contact_form": "Форма для контакта",
+    "language_toggle": "Выбирете язык:"
+  }
+}

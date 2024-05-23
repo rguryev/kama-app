@@ -2,8 +2,8 @@
 
 import React, { FC } from "react";
 import Image from "next/image";
-import TitleContainer from "../title-container";
-import MaxWidthWrapper from "../max-width-wrapper";
+import TitleContainer from "./title-container";
+import MaxWidthWrapper from "./max-width-wrapper";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import { type CarouselApi } from "@/components/ui/carousel";
@@ -16,20 +16,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { TFunction } from "i18next";
-import { useTranslation } from "react-i18next";
 import { AlertTriangle } from "lucide-react";
 
-interface ReviewsProps {
-  lng: any;
-}
-
-const Reviews: FC<ReviewsProps> = ({ lng }: any) => {
+const Reviews = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  const { t, i18n } = useTranslation(lng);
+  const { t } = useTranslation(lng);
 
   const isEnglish = i18n.language === "en";
 

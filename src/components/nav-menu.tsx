@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import {
@@ -7,15 +8,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from "../ui/navigation-menu";
+} from "./ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ModeToggle } from "../theme-toggle";
-import Logo from "../logo";
-import { TFunction } from "i18next";
-import { DropdownMenuCheckboxes } from "../dropdown-menu";
+import { ModeToggle } from "./theme-toggle";
+import Logo from "./logo";
+import LocalSwitcher from "./local-switcher";
+import { useTranslations } from "next-intl";
+import { LanguagePicker } from "./language-switcher";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -43,12 +44,8 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-interface NavMenuBaseProps {
-  lng: any;
-  t: TFunction;
-}
-
-const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
+const NavMenu = () => {
+  const t = useTranslations("Navbar");
   const navLinksServices: {
     id: string;
     title: string;
@@ -57,21 +54,21 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
   }[] = [
     {
       id: "about",
-      title: t("navbar.services.about.title"),
+      title: t("services_about_title"),
       href: "#",
-      description: t("navbar.services.about.description"),
+      description: t("services_about_description"),
     },
     {
       id: "services",
-      title: t("navbar.services.services.title"),
+      title: t("services_services_title"),
       href: "#",
-      description: t("navbar.services.services.description"),
+      description: t("services_services_description"),
     },
     {
       id: "reviews",
-      title: t("navbar.services.reviews.title"),
+      title: t("services_reviews_title"),
       href: "#",
-      description: t("navbar.services.reviews.description"),
+      description: t("services_reviews_description"),
     },
   ];
 
@@ -83,27 +80,27 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
   }[] = [
     {
       id: "course_about",
-      title: t("navbar.course.about.title"),
+      title: t("course_about_title"),
       href: "#",
-      description: t("navbar.course.about.description"),
+      description: t("course_about_description"),
     },
     {
       id: "course_billing",
-      title: t("navbar.course.billing.title"),
+      title: t("course_billing_title"),
       href: "#",
-      description: t("navbar.course.about.description"),
+      description: t("course_about_description"),
     },
     {
       id: "сourse_reviews",
-      title: t("navbar.course.reviews.title"),
+      title: t("course_reviews_title"),
       href: "#",
-      description: t("navbar.course.reviews.description"),
+      description: t("course_reviews_description"),
     },
     {
       id: "course_additional",
-      title: t("navbar.course.additional.title"),
+      title: t("course_additional_title"),
       href: "#",
-      description: t("navbar.course.additional.description"),
+      description: t("course_additional_description"),
     },
   ];
 
@@ -115,9 +112,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
           className="grid grid-cols-1 gap-1 sm:flex sm:flex-row"
         >
           <NavigationMenuItem className="order-4 md:order-1">
-            <NavigationMenuTrigger>
-              {t("navbar.services")}
-            </NavigationMenuTrigger>
+            <NavigationMenuTrigger>{t("services")}</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid h-[26rem] gap-1 p-4 md:h-[16rem] md:w-[31rem] md:grid-cols-2">
                 <li className="row-span-3">
@@ -128,7 +123,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
                     >
                       <Logo />
                       <p className="my-2 text-left text-sm leading-tight text-muted-foreground">
-                        {t("navbar.services.subtitle")}
+                        {t("services_subtitle")}
                       </p>
                     </Link>
                   </NavigationMenuLink>
@@ -148,7 +143,7 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="order-3 md:order-2">
-            <NavigationMenuTrigger>{t("navbar.course")}</NavigationMenuTrigger>
+            <NavigationMenuTrigger>{t("course")}</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid h-[26rem] gap-1 p-4 text-left md:h-[16rem] md:w-[31rem] md:grid-cols-2">
                 {navLinksCourse.map((component) => (
@@ -166,13 +161,14 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
           <NavigationMenuItem className="order-2 md:order-3">
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {t("navbar.contact_form")}
+                {t("contact_form")}
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <div className="order-1 flex flex-row justify-center gap-2 md:order-4">
             <NavigationMenuItem>
-              <DropdownMenuCheckboxes lng={lng} t={t} />
+              {/* <LocalSwitcher /> */}
+              <LanguagePicker />
             </NavigationMenuItem>
             <NavigationMenuItem>
               <ModeToggle />
@@ -184,4 +180,4 @@ const NavMenuBase = ({ lng, t }: NavMenuBaseProps) => {
   );
 };
 
-export default NavMenuBase;
+export default NavMenu;

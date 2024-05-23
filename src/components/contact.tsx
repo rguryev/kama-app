@@ -9,31 +9,24 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { Textarea } from "../ui/textarea";
-import MaxWidthWrapper from "../max-width-wrapper";
-import TitleContainer from "../title-container";
-import Container from "../container";
+import { Textarea } from "./ui/textarea";
+import MaxWidthWrapper from "./max-width-wrapper";
+import TitleContainer from "./title-container";
+import Container from "./container";
 import { sendMessage } from "@/api/telegram";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { useTranslation } from "@/app/i18n/client";
-import i18next, { TFunction } from "i18next";
 
-interface ContactProps {
-  lng: any;
-  t: TFunction;
-}
-const Contact: FC<ContactProps> = ({ lng }: any) => {
-  const { t } = useTranslation(lng, "contact");
-  const currentLanguage = i18next.language;
+
+const Contact = () => {
   const formSchema = z.object({
     username: z.string().min(2, {
       message: t("homepage.contact.error.username"),

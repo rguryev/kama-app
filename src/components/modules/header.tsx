@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { menu } from "../assets";
+import { menu } from "../../assets";
 
 import {
   Sheet,
@@ -11,19 +9,17 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet";
+} from "../ui/sheet";
 
-import MaxWidthWrapper from "./max-width-wrapper";
-import Logo from "./logo";
-import { NavMenu } from "./nav-menu/client";
-import { useTranslation } from "react-i18next";
+import MaxWidthWrapper from "../max-width-wrapper";
+import Logo from "../logo";
+import { NextIntlClientProvider, useTranslations } from "next-intl";
+import NavMenu from "../nav-menu";
+import { getMessages } from "next-intl/server";
 
-interface NavbarProps {
-  lng: any;
-}
-
-const Navbar = ({ lng }: NavbarProps) => {
-  const { t, i18n } = useTranslation();
+const Header = async () => {
+  const t = useTranslations("Navbar");
+  const messages = await getMessages();
   return (
     // <nav className="sticky inset-x-0 top-0 z-50 h-20 bg-slate-100">
     <MaxWidthWrapper className="sticky top-2 z-50 h-full sm:top-4">
@@ -32,7 +28,9 @@ const Navbar = ({ lng }: NavbarProps) => {
           <Logo />
 
           <div className="hidden flex-1 items-center justify-end sm:flex">
-            <NavMenu lng={lng} />
+            <NextIntlClientProvider messages={messages}>
+              <NavMenu />
+            </NextIntlClientProvider>
           </div>
 
           <div className="flex flex-1 items-center justify-end sm:hidden">
@@ -47,11 +45,11 @@ object-contain"
               </SheetTrigger>
               <SheetContent side={"right"}>
                 <SheetHeader>
-                  <SheetTitle>{t("navbar.mobile_menu.title")}</SheetTitle>
+                  <SheetTitle>{t("mobile_menu_title")}</SheetTitle>
                   <SheetDescription>
-                    {t("navbar.mobile_menu.description")}
+                    {t("mobile_menu_description")}
                   </SheetDescription>
-                  <NavMenu lng={lng} />
+                  {/* <NavMenu /> */}
                 </SheetHeader>
               </SheetContent>
             </Sheet>
@@ -62,4 +60,4 @@ object-contain"
   );
 };
 
-export default Navbar;
+export default Header;
