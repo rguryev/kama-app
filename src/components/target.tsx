@@ -6,45 +6,43 @@ import TitleContainer from "./title-container";
 import CompactWrap from "./compact-wrap";
 import MaxWidthWrapper from "./max-width-wrapper";
 import SectionContainer from "./section-container";
-
-const perks = [
-  {
-    name: "Хочу сам",
-    Icon: ArrowDownToLine,
-    description:
-      "Если Вы хотите легализовать себя и свою семью самостоятельно с минимальными затратами и профессиональными знаниями",
-  },
-  {
-    name: "Хочу гражданство",
-    Icon: CheckCircle,
-    description:
-      "Если Вы хотите пройти путь от визы до получения польского гражданства - курс будет пошаговой инструкцией!",
-  },
-  {
-    name: "Хочу знаний и опыта!",
-    Icon: Leaf,
-    description:
-      "Если Вы хотите начать работу или уже работаете в сфере легализации, хотите повысить свой уровень знаний и опыта, а так же увеличить цену на свои услуги - этот курс для Вас!",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export interface IPageInfo {
   badgeIcon?: LucideIcon;
   badgeText: string;
 }
-const pageInfo: IPageInfo = {
-  badgeIcon: TargetIcon,
-  badgeText: "Целевая аудитория",
-};
 
 const Target = () => {
+  const t = useTranslations("Target");
+  const perks = [
+    {
+      name: t("perk_1_title"),
+      Icon: ArrowDownToLine,
+      description: t("perk_1_description"),
+    },
+    {
+      name: t("perk_2_title"),
+      Icon: CheckCircle,
+      description: t("perk_2_description"),
+    },
+    {
+      name: t("perk_3_title"),
+      Icon: Leaf,
+      description: t("perk_3_description"),
+    },
+  ];
+  const pageInfo: IPageInfo = {
+    badgeIcon: TargetIcon,
+    badgeText: t("badgeText"),
+  };
   return (
     <section id="target">
       <MaxWidthWrapper className="mb-8 mt-24 rounded-xxl bg-card text-center drop-shadow-xl">
         <SectionContainer>
           <TitleContainer className="text-foreground">
             <Badge pageInfo={pageInfo} />
-            <h1>Для кого этот курс?</h1>
+            <h1>{t("title")}</h1>
           </TitleContainer>
 
           <div className="mx-10 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">

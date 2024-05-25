@@ -3,256 +3,226 @@ import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import TitleContainer from "./title-container";
 import CoursePricingCard from "./course-pricing-card";
+import { useTranslations } from "next-intl";
 
 const CoursePricing = () => {
+  const t = useTranslations("CoursePricing");
   const plans = [
     {
       id: 1,
-      title: "Для себя",
-      tagline:
-        "Если Вы хотите легализовать себя и свою семью САМОСТОЯТЕЛЬНО с минимальными затратами и профессиональными знаниями.",
+      title: t("plan_1_title"),
+      tagline: t("plan_1_tagline"),
       quota: 1,
-      price: 1530,
+      price: t("plan_1_price"),
       features: [
         {
-          text: "10 блоков",
-          footnote:
-            "В каждый блок входит обучающий материал на определенную тему (ВНЖ, ПМЖ, Трудоустройство и тд)",
+          text: t("feature_1_text"),
+          footnote: t("feature_1_footnote"),
         },
         {
-          text: "Обратная связь",
-          footnote: "Информация о обратной связи",
+          text: t("feature_2_text"),
+          footnote: t("feature_2_footnote"),
           negative: true,
         },
         {
-          text: "Групповой чат PRO",
-          footnote: "Информация о групповом чате",
+          text: t("feature_3_text"),
+          footnote: t("feature_3_footnote"),
           negative: true,
         },
         {
-          text: "Групповой созвон еженедельно",
+          text: t("feature_4_text"),
           negative: true,
         },
         {
-          text: "Индивидуальный созвон еженедельно",
+          text: t("feature_5_text"),
           negative: true,
         },
         {
-          text: "Возможность выиграть приз",
+          text: t("feature_6_text"),
           negative: true,
         },
         {
-          text: "Стажировка в моей команде",
+          text: t("feature_7_text"),
           negative: true,
         },
       ],
       blocks: [
         {
-          title: "1 Блок: С чего начать свой путь в легализации?",
-          description:
-            "В этом блоке Вы узнаете с чего начать свой процесс легализации, какие могут быть нюансы, как выбрать самый вариант для Вас и семьи + бонус “Словарь терминов необходимых для легализации”.",
+          title: t("block_1_title"),
+          description: t("block_1_description"),
         },
         {
-          title: "2 Блок: Легализация пребывания и въезд в Польшу.",
-          description:
-            "В этом блоке мы поговорим о визах, их типах, статусе УКР и других документах, которые дают право въезда и пребывания на территории Польши.",
+          title: t("block_2_title"),
+          description: t("block_2_description"),
         },
         {
-          title: "3 Блок: Легальное трудоустройство в Польше.",
-          description:
-            "Поднимем тему разрешений на работу, какие виды договоров бывают, что такое информация старосты и др. + тест",
+          title: t("block_3_title"),
+          description: t("block_3_description"),
         },
         {
-          title: "4 Блок: ВНЖ.",
-          description:
-            "Виды ВНЖ, основания для получения ВНЖ, документы и из правильное заполнение + тест.",
+          title: t("block_4_title"),
+          description: t("block_4_description"),
         },
         {
-          title: "5 Блок: ПМЖ.",
-          description:
-            "Кто может получить ПМЖ в Польше? Что для этого нужно? Какие сроки? Документы и из правильное заполнение + Тест.",
+          title: t("block_5_title"),
+          description: t("block_5_description"),
         },
         {
-          title: "6 Блок: Гражданство.",
-          description:
-            "Разберем способы получения польского гражданства. Какой вариант подачи выбрать через Президента или Воеводу? На что обратить внимание в документах?",
+          title: t("block_6_title"),
+          description: t("block_6_description"),
         },
       ],
     },
     {
       id: 2,
-      title: "Для работы",
-      tagline:
-        "Если Вы хотите начать работу или уже работаете в сфере легализации, хотите повысить свой уровень знаний и опыта, а также увеличить цену на свои услуги - этот курс для Вас!",
+      title: t("plan_2_title"),
+      tagline: t("plan_2_tagline"),
       quota: 1,
-      price: 1700,
+      price: t("plan_2_price"),
       features: [
         {
-          text: "10 блоков",
-          footnote:
-            "В каждый блок входит обучающий материал на определенную тему (ВНЖ, ПМЖ, Трудоустройство и тд)",
+          text: t("feature_1_text"),
+          footnote: t("feature_1_footnote"),
         },
         {
-          text: "Обратная связь",
-          footnote: "Информация о обратной связи",
+          text: t("feature_2_text"),
+          footnote: t("feature_2_footnote"),
         },
         {
-          text: "Групповой чат PRO",
-          footnote: "Информация о групповом чате",
+          text: t("feature_3_text"),
+          footnote: t("feature_3_footnote"),
           negative: true,
         },
         {
-          text: "Групповой созвон еженедельно",
+          text: t("feature_4_text"),
         },
         {
-          text: "Индивидуальный созвон еженедельно",
+          text: t("feature_5_text"),
           negative: true,
         },
         {
-          text: "Возможность выиграть приз",
+          text: t("feature_6_text"),
         },
         {
-          text: "Стажировка в моей команде",
+          text: t("feature_7_text"),
           negative: true,
         },
       ],
       blocks: [
         {
-          title: "1 Блок: С чего начать свой путь в легализации?",
-          description:
-            "В этом блоке Вы узнаете с чего начать свой процесс легализации, какие могут быть нюансы, как выбрать самый вариант для Вас и семьи + бонус “Словарь терминов необходимых для легализации”.",
+          title: t("block_1_title"),
+          description: t("block_1_description"),
         },
         {
-          title: "2 Блок: Легализация пребывания и въезд в Польшу.",
-          description:
-            "В этом блоке мы поговорим о визах, их типах, статусе УКР и других документах, которые дают право въезда и пребывания на территории Польши.",
+          title: t("block_2_title"),
+          description: t("block_2_description"),
         },
         {
-          title: "3 Блок: Легальное трудоустройство в Польше.",
-          description:
-            "Поднимем тему разрешений на работу, какие виды договоров бывают, что такое информация старосты и др. + тест",
+          title: t("block_3_title"),
+          description: t("block_3_description"),
         },
         {
-          title: "4 Блок: ВНЖ.",
-          description:
-            "Виды ВНЖ, основания для получения ВНЖ, документы и из правильное заполнение + тест.",
+          title: t("block_4_title"),
+          description: t("block_4_description"),
         },
         {
-          title: "5 Блок: ПМЖ.",
-          description:
-            "Кто может получить ПМЖ в Польше? Что для этого нужно? Какие сроки? Документы и из правильное заполнение + Тест.",
+          title: t("block_5_title"),
+          description: t("block_5_description"),
         },
         {
-          title: "6 Блок: Гражданство.",
-          description:
-            "Разберем способы получения польского гражданства. Какой вариант подачи выбрать через Президента или Воеводу? На что обратить внимание в документах?",
+          title: t("block_6_title"),
+          description: t("block_6_description"),
         },
         {
-          title: "7 Блок: Работа с документами и из разбор.",
-          description:
-            "Виды ужендовых документов и как с ними работать (Wezwanie, zawiadomienie, umorzenie и тд)",
+          title: t("block_7_title"),
+          description: t("block_7_description"),
         },
         {
-          title: "8 Блок: Важные заявления и документы.",
-          description:
-            "Как ускорить дело, написать апелляцию или заменить пластик, цель пребывания и т.д",
+          title: t("block_8_title"),
+          description: t("block_8_description"),
         },
         {
-          title: "9 Блок: Бизнес JDG и Spółka",
-          description:
-            "Разберем нюансы открытия бизнеса, разницу между JGD и Spółką, как выбрать коды PKD и формы налогооблажений",
+          title: t("block_9_title"),
+          description: t("block_9_description"),
         },
         {
-          title: "10 Блок: Работа с миграционным правом.",
-          description:
-            "Где брать информацию по миграционному праву. Что такое KPA и какие нормы необходимо знать?",
+          title: t("block_10_title"),
+          description: t("block_10_description"),
         },
       ],
     },
     {
       id: 3,
-      title: "Для работы PRO",
-      tagline:
-        "Если Вы хотите начать работу или уже работаете в сфере легализации, хотите повысить свой уровень знаний и опыта, а также увеличить цену на свои услуги - этот курс для Вас!",
+      title: t("plan_3_title"),
+      tagline: t("plan_3_tagline"),
       quota: 1,
-      price: 2295,
+      price: t("plan_3_price"),
       features: [
         {
-          text: "10 блоков",
-          footnote:
-            "В каждый блок входит обучающий материал на определенную тему (ВНЖ, ПМЖ, Трудоустройство и тд)",
+          text: t("feature_1_text"),
+          footnote: t("feature_1_footnote"),
         },
         {
-          text: "Обратная связь",
-          footnote: "Информация о обратной связи",
+          text: t("feature_2_text"),
+          footnote: t("feature_2_footnote"),
         },
         {
-          text: "Групповой чат PRO",
-          footnote: "Информация о групповом чате",
+          text: t("feature_3_text"),
+          footnote: t("feature_3_footnote"),
         },
         {
-          text: "Групповой созвон еженедельно",
+          text: t("feature_4_text"),
         },
         {
-          text: "Индивидуальные созвоны еженедельно",
+          text: t("feature_5_text"),
         },
         {
-          text: "Возможность выиграть приз",
+          text: t("feature_6_text"),
         },
         {
-          text: "Стажировка в моей команде",
+          text: t("feature_7_text"),
         },
       ],
       blocks: [
         {
-          title: "1 Блок: С чего начать свой путь в легализации?",
-          description:
-            "В этом блоке Вы узнаете с чего начать свой процесс легализации, какие могут быть нюансы, как выбрать самый вариант для Вас и семьи + бонус “Словарь терминов необходимых для легализации”.",
+          title: t("block_1_title"),
+          description: t("block_1_description"),
         },
         {
-          title: "2 Блок: Легализация пребывания и въезд в Польшу.",
-          description:
-            "В этом блоке мы поговорим о визах, их типах, статусе УКР и других документах, которые дают право въезда и пребывания на территории Польши.",
+          title: t("block_2_title"),
+          description: t("block_2_description"),
         },
         {
-          title: "3 Блок: Легальное трудоустройство в Польше.",
-          description:
-            "Поднимем тему разрешений на работу, какие виды договоров бывают, что такое информация старосты и др. + тест",
+          title: t("block_3_title"),
+          description: t("block_3_description"),
         },
         {
-          title: "4 Блок: ВНЖ.",
-          description:
-            "Виды ВНЖ, основания для получения ВНЖ, документы и из правильное заполнение + тест.",
+          title: t("block_4_title"),
+          description: t("block_4_description"),
         },
         {
-          title: "5 Блок: ПМЖ.",
-          description:
-            "Кто может получить ПМЖ в Польше? Что для этого нужно? Какие сроки? Документы и из правильное заполнение + Тест.",
+          title: t("block_5_title"),
+          description: t("block_5_description"),
         },
         {
-          title: "6 Блок: Гражданство.",
-          description:
-            "Разберем способы получения польского гражданства. Какой вариант подачи выбрать через Президента или Воеводу? На что обратить внимание в документах?",
+          title: t("block_6_title"),
+          description: t("block_6_description"),
         },
         {
-          title: "7 Блок: Работа с документами и из разбор.",
-          description:
-            "Виды ужендовых документов и как с ними работать (Wezwanie, zawiadomienie, umorzenie и тд)",
+          title: t("block_7_title"),
+          description: t("block_7_description"),
         },
         {
-          title: "8 Блок: Важные заявления и документы.",
-          description:
-            "Как ускорить дело, написать апелляцию или заменить пластик, цель пребывания и т.д",
+          title: t("block_8_title"),
+          description: t("block_8_description"),
         },
         {
-          title: "9 Блок: Бизнес JDG и Spółka",
-          description:
-            "Разберем нюансы открытия бизнеса, разницу между JGD и Spółką, как выбрать коды PKD и формы налогооблажений",
+          title: t("block_9_title"),
+          description: t("block_9_description"),
         },
         {
-          title: "10 Блок: Работа с миграционным правом.",
-          description:
-            "Где брать информацию по миграционному праву. Что такое KPA и какие нормы необходимо знать?",
+          title: t("block_10_title"),
+          description: t("block_10_description"),
         },
       ],
     },
@@ -263,10 +233,10 @@ const CoursePricing = () => {
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer className="mx-auto mb-2 sm:max-w-lg">
           <h1 className="font-bold tracking-tight text-foreground">
-            Тарифы на курс
+            {t("title")}
           </h1>
           <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-foreground">
-            Выберете тариф под свои нужды.
+            {t("description")}
           </p>
         </TitleContainer>
 

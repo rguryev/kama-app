@@ -1,17 +1,13 @@
 import React, { FC } from "react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import { Input } from "./ui/input";
+import MaxWidthWrapper from "../max-width-wrapper";
+import { Input } from "../ui/input";
 import Link from "next/link";
-import { Button } from "./ui/button";
-import Logo from "./logo";
-import { useTranslation } from "@/app/i18n";
-import { TFunction } from "i18next";
+import { Button } from "../ui/button";
+import Logo from "../logo";
+import { useTranslations } from "next-intl";
 
-interface FooterProps {
-  lng: any;
-}
-const Footer: FC<FooterProps> = async ({ lng }: any) => {
-  const { t } = await useTranslation(lng);
+const Footer = async () => {
+  const t = useTranslations("Footer");
   const navLinksServices: {
     id: string;
     title: string;
@@ -20,21 +16,21 @@ const Footer: FC<FooterProps> = async ({ lng }: any) => {
   }[] = [
     {
       id: "about",
-      title: t("footer.services.about.title"),
+      title: t("services_about_title"),
       href: "#",
-      description: t("footer.services.about.description"),
+      description: t("services_about_description"),
     },
     {
       id: "services",
-      title: t("footer.services.services.title"),
+      title: t("services_services_title"),
       href: "#",
-      description: t("footer.services.services.description"),
+      description: t("services_services_description"),
     },
     {
       id: "reviews",
-      title: t("footer.services.reviews.title"),
+      title: t("services_reviews_title"),
       href: "#",
-      description: t("footer.services.reviews.description"),
+      description: t("services_reviews_description"),
     },
   ];
 
@@ -46,27 +42,27 @@ const Footer: FC<FooterProps> = async ({ lng }: any) => {
   }[] = [
     {
       id: "course_about",
-      title: t("footer.сourse.about.title"),
+      title: t("course_about_title"),
       href: "#",
-      description: t("footer.сourse.about.description"),
+      description: t("course_about_description"),
     },
     {
       id: "course_billing",
-      title: t("footer.сourse.pricing.title"),
+      title: t("course_pricing_title"),
       href: "#",
-      description: t("footer.сourse.pricing.description"),
+      description: t("course_pricing_description"),
     },
     {
       id: "сourse_reviews",
-      title: t("footer.сourse.reviews.title"),
+      title: t("course_reviews_title"),
       href: "#",
-      description: t("footer.сourse.reviews.description"),
+      description: t("course_reviews_description"),
     },
     {
       id: "course_additional",
-      title: t("footer.сourse.additional.title"),
+      title: t("course_additional_title"),
       href: "#",
-      description: t("footer.сourse.additional.description"),
+      description: t("course_additional_description"),
     },
   ];
 
@@ -80,18 +76,18 @@ const Footer: FC<FooterProps> = async ({ lng }: any) => {
             <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
               <div className="sm:col-span-2">
                 <h1 className="text-md max-w-lg font-semibold tracking-tight text-gray-800 xl:text-xl dark:text-white">
-                  {t("footer.contact.title")}
+                  {t("contact_title")}
                 </h1>
 
                 <div className="mx-auto mt-6 flex flex-col space-y-3 md:flex-row md:space-y-0">
                   <Input type="email" placeholder="Email" className="mr-4" />
-                  <Button>{t("footer.contact.button")}</Button>
+                  <Button>{t("contact_button")}</Button>
                 </div>
               </div>
 
               <div>
                 <p className="font-semibold text-gray-800 dark:text-white">
-                  {t("footer.services.title")}
+                  {t("services_title")}
                 </p>
 
                 <ul className="mt-5 flex flex-col items-start space-y-2">
@@ -110,7 +106,7 @@ const Footer: FC<FooterProps> = async ({ lng }: any) => {
 
               <div>
                 <p className="font-semibold text-gray-800 dark:text-white">
-                  {t("footer.сourse.title")}
+                  {t("course_title")}
                 </p>
 
                 <ul className="mt-5 flex flex-col items-start space-y-2">

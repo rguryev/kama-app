@@ -2,70 +2,190 @@ import React from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import TitleContainer from "./title-container";
 import PricingCard from "./pricing-card";
+import { useTranslations } from "next-intl";
 
 const Pricing = () => {
+  const t = useTranslations("Pricing");
   const plans = [
     {
       id: 1,
-      title: "ВНЖ",
-      tagline: "Короткое описание услуги...",
-      price: "1200",
+      title: t("plan_1_title"),
+      tagline: t("plan_1_tagline"),
+      price: t("plan_1_price"),
       services: [
-        { id: 1, service: "бизнес", price: "1400" },
-        { id: 2, service: "работа", price: "1200" },
-        { id: 3, service: "воссоединение семьи", price: "1200" },
-        { id: 4, service: "учеба", price: "1200" },
-        { id: 5, service: "blue card", price: "1400" },
-        { id: 6, service: "брак с поляком", price: "1200" },
-        { id: 7, service: "конкубинат", price: "1400" },
-        { id: 8, service: "международная защита", price: "1200" },
+        {
+          id: 1,
+          service: t("plan_1_service_1_title"),
+          price: t("plan_1_service_1_price"),
+        },
+        {
+          id: 2,
+          service: t("plan_1_service_2_title"),
+          price: t("plan_1_service_2_price"),
+        },
+        {
+          id: 3,
+          service: t("plan_1_service_3_title"),
+          price: t("plan_1_service_3_price"),
+        },
+        {
+          id: 4,
+          service: t("plan_1_service_4_title"),
+          price: t("plan_1_service_4_price"),
+        },
+        {
+          id: 5,
+          service: t("plan_1_service_5_title"),
+          price: t("plan_1_service_5_price"),
+        },
+        {
+          id: 6,
+          service: t("plan_1_service_6_title"),
+          price: t("plan_1_service_6_price"),
+        },
+        {
+          id: 7,
+          service: t("plan_1_service_7_title"),
+          price: t("plan_1_service_7_price"),
+        },
+        {
+          id: 8,
+          service: t("plan_1_service_8_title"),
+          price: t("plan_1_service_8_price"),
+        },
       ],
       servicesPlus: [
-        { id: 1, service: "бизнес", price: "1750" },
-        { id: 2, service: "работа", price: "1500" },
-        { id: 3, service: "воссоединение семьи", price: "1500" },
-        { id: 4, service: "учеба", price: "1500" },
-        { id: 5, service: "blue card", price: "1750" },
-        { id: 6, service: "брак с поляком", price: "1500" },
-        { id: 7, service: "конкубинат", price: "1750" },
-        { id: 8, service: "международная защита", price: "1500" },
+        {
+          id: 1,
+          service: t("plan_1_service_plus_1_title"),
+          price: t("plan_1_service_plus_1_price"),
+        },
+        {
+          id: 2,
+          service: t("plan_1_service_plus_2_title"),
+          price: t("plan_1_service_plus_2_price"),
+        },
+        {
+          id: 3,
+          service: t("plan_1_service_plus_3_title"),
+          price: t("plan_1_service_plus_3_price"),
+        },
+        {
+          id: 4,
+          service: t("plan_1_service_plus_4_title"),
+          price: t("plan_1_service_plus_4_price"),
+        },
+        {
+          id: 5,
+          service: t("plan_1_service_plus_5_title"),
+          price: t("plan_1_service_plus_5_price"),
+        },
+        {
+          id: 6,
+          service: t("plan_1_service_plus_6_title"),
+          price: t("plan_1_service_plus_6_price"),
+        },
+        {
+          id: 7,
+          service: t("plan_1_service_plus_7_title"),
+          price: t("plan_1_service_plus_7_price"),
+        },
+        {
+          id: 8,
+          service: t("plan_1_service_plus_8_title"),
+          price: t("plan_1_service_plus_8_price"),
+        },
       ],
     },
     {
       id: 2,
-      title: "ПМЖ",
-      tagline: "Короткое описание услуги...",
-      price: "1200",
+      title: t("plan_2_title"),
+      tagline: t("plan_2_tagline"),
+      price: t("plan_2_price"),
       services: [
-        { id: 1, service: "карта поляка", price: "1200" },
-        { id: 2, service: "польские корни", price: "1400" },
-        { id: 3, service: "карта резидента ЕС", price: "1800" },
+        {
+          id: 1,
+          service: t("plan_2_service_1_title"),
+          price: t("plan_2_service_1_price"),
+        },
+        {
+          id: 2,
+          service: t("plan_2_service_2_title"),
+          price: t("plan_2_service_2_price"),
+        },
+        {
+          id: 3,
+          service: t("plan_2_service_3_title"),
+          price: t("plan_2_service_3_price"),
+        },
       ],
       servicesPlus: [
-        { id: 1, service: "карта поляка", price: "1500" },
-        { id: 2, service: "польские корни", price: "1700" },
-        { id: 3, service: "карта резидента ЕС", price: "2000" },
+        {
+          id: 1,
+          service: t("plan_2_service_plus_1_title"),
+          price: t("plan_2_service_plus_1_price"),
+        },
+        {
+          id: 2,
+          service: t("plan_2_service_plus_2_title"),
+          price: t("plan_2_service_plus_2_price"),
+        },
+        {
+          id: 3,
+          service: t("plan_2_service_plus_3_title"),
+          price: t("plan_2_service_plus_3_price"),
+        },
       ],
     },
     {
       id: 3,
-      title: "Гражданство",
-      tagline: "Короткое описание услуги...",
-      price: "2000",
-      services: [{ id: 1, service: "Получение гражданства", price: "2000" }],
+      title: t("plan_3_title"),
+      tagline: t("plan_3_tagline"),
+      price: t("plan_3_price"),
+      services: [
+        {
+          id: 1,
+          service: t("plan_3_service_1_title"),
+          price: t("plan_3_service_1_price"),
+        },
+      ],
     },
     {
       id: 4,
-      title: "Дополнительные услуги",
-      tagline: "Короткое описание услуги...",
-      price: "250",
+      title: t("plan_4_title"),
+      tagline: t("plan_4_tagline"),
+      price: t("plan_4_price"),
       services: [
-        { id: 1, service: "Ускорение", price: "1000" },
-        { id: 2, service: "Апелляция", price: "700" },
-        { id: 3, service: "Замена децизии", price: "400" },
-        { id: 4, service: "Замена пластика", price: "400" },
-        { id: 5, service: "Проверка документов перед подачей", price: "600" },
-        { id: 6, service: "Консультация", price: "250" },
+        {
+          id: 1,
+          service: t("plan_4_service_1_title"),
+          price: t("plan_4_service_1_price"),
+        },
+        {
+          id: 2,
+          service: t("plan_4_service_2_title"),
+          price: t("plan_4_service_2_price"),
+        },
+        {
+          id: 3,
+          service: t("plan_4_service_3_title"),
+          price: t("plan_4_service_3_price"),
+        },
+        {
+          id: 4,
+          service: t("plan_4_service_4_title"),
+          price: t("plan_4_service_4_price"),
+        },
+        {
+          id: 5,
+          service: t("plan_4_service_5_title"),
+          price: t("plan_4_service_5_price"),
+        },
+        {
+          id: 6,
+          service: t("plan_4_service_6_title"),
+          price: t("plan_4_service_6_price"),
+        },
       ],
     },
   ];
@@ -75,10 +195,10 @@ const Pricing = () => {
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer className="mx-auto mb-2 sm:max-w-lg">
           <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
-            Тарифы на услуги
+            {t("title")}
           </h1>
           <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
-            Выберете тариф под свои нужды.
+            {t("description")}
           </p>
         </TitleContainer>
         <div className="grid grid-cols-1 gap-5 pt-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

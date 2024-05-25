@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React from "react";
 import Image from "next/image";
 import TitleContainer from "./title-container";
 import MaxWidthWrapper from "./max-width-wrapper";
@@ -17,31 +17,32 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AlertTriangle } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 const Reviews = () => {
+  const t = useTranslations("Reviews");
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  const { t } = useTranslation(lng);
-
-  const isEnglish = i18n.language === "en";
+  const locale = useLocale();
+  const isEnglish = locale === "en";
 
   const reviewsImages = [
     {
-      src: t("homepage.reviews.review_1"),
+      src: t("review_1"),
       alt: "review1",
     },
     {
-      src: t("homepage.reviews.review_2"),
+      src: t("review_2"),
       alt: "review2",
     },
     {
-      src: t("homepage.reviews.review_3"),
+      src: t("review_3"),
       alt: "review3",
     },
     {
-      src: t("homepage.reviews.review_4"),
+      src: t("review_4"),
       alt: "review4",
     },
   ];
@@ -64,10 +65,10 @@ const Reviews = () => {
       <MaxWidthWrapper className="mb-8 mt-24 text-center">
         <TitleContainer>
           <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
-            {t("homepage.reviews.title")}
+            {t("title")}
           </h1>
           <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
-            {t("homepage.reviews.description")}
+            {t("description")}
           </p>
         </TitleContainer>
 
@@ -78,10 +79,10 @@ const Reviews = () => {
                 <AlertTriangle className="h-4 w-4" />
               </div>
               <AlertTitle className="sm:mr-6">
-                {t("homepage.reviews.en_disclaimer.title")}
+                {t("en_disclaimer_title")}
               </AlertTitle>
               <AlertDescription>
-                {t("homepage.reviews.en_disclaimer.description")}
+                {t("en_disclaimer_description")}
               </AlertDescription>
             </Alert>
           </div>
@@ -116,7 +117,7 @@ const Reviews = () => {
           <CarouselNext />
         </Carousel>
         <div className="py-2 text-center text-sm text-muted-foreground">
-          {t("homepage.reviews.counter", {
+          {t("counter", {
             current: current,
             count: count,
           })}

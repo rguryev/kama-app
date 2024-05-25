@@ -11,20 +11,22 @@ import {
 
 import { FC } from "react";
 import { ScrollArea } from "./ui/scroll-area";
-import { Block, CoursePricingCardProps } from "./course-pricing-card";
+import { CoursePricingCardProps } from "./course-pricing-card";
+import { useTranslations } from "next-intl";
 
 const CoursePricingDialog: FC<CoursePricingCardProps> = ({ plan }) => {
+  const t = useTranslations("CoursePricingDialog");
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button size={"full"} variant="outline">
-          Подробнее
+          {t("details")}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-max max-w-[60rem]">
         <DialogHeader>
-          <DialogTitle>Тариф: {plan.title}</DialogTitle>
-          <DialogDescription>Программа курса: </DialogDescription>
+          <DialogTitle>{t("rate_title", { plan: plan.title })}</DialogTitle>
+          <DialogDescription>{t("rate_description")}</DialogDescription>
         </DialogHeader>
         <ScrollArea className="h-[450px] w-auto">
           <div className="flex flex-col gap-4 py-4 sm:grid">
@@ -48,7 +50,7 @@ const CoursePricingDialog: FC<CoursePricingCardProps> = ({ plan }) => {
           </div>
         </ScrollArea>
         <DialogFooter>
-          <Button type="submit">Записаться</Button>
+          <Button type="submit">{t("submit")}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

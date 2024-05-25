@@ -45,7 +45,7 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 const NavMenu = () => {
-  const t = useTranslations("Navbar");
+  const t = useTranslations("Header");
   const navLinksServices: {
     id: string;
     title: string;

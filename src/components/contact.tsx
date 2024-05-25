@@ -24,18 +24,20 @@ import Container from "./container";
 import { sendMessage } from "@/api/telegram";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-
+import { useLocale, useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations("Contact");
+  const currentLanguage = useLocale();
   const formSchema = z.object({
     username: z.string().min(2, {
-      message: t("homepage.contact.error.username"),
+      message: t("error_username"),
     }),
     phone: z.string().refine((value) => /^\+?[1-9]\d{8,11}$/.test(value), {
-      message: t("homepage.contact.error.phone"),
+      message: t("error_phone"),
     }),
     message: z.string().min(10, {
-      message: t("homepage.contact.error.message"),
+      message: t("error_message"),
     }),
   });
   const [isLoading, setIsLoading] = React.useState(false);
@@ -71,10 +73,10 @@ const Contact = () => {
       <MaxWidthWrapper className="mb-8 mt-24 max-w-[50rem]">
         <TitleContainer>
           <h1 className="text-center font-bold tracking-tight text-gray-900 dark:text-white">
-            {t("homepage.contact.title")}
+            {t("title")}
           </h1>
           <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
-            {t("homepage.contact.description")}
+            {t("description")}
           </p>
         </TitleContainer>
 
@@ -89,18 +91,11 @@ const Contact = () => {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">
-                      {t("homepage.contact.name.label")}
-                    </FormLabel>
+                    <FormLabel className="text-lg">{t("name_label")}</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder={t("homepage.contact.name.placeholder")}
-                        {...field}
-                      />
+                      <Input placeholder={t("name_placeholder")} {...field} />
                     </FormControl>
-                    <FormDescription>
-                      {t("homepage.contact.name.description")}
-                    </FormDescription>
+                    <FormDescription>{t("name_description")}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -111,17 +106,12 @@ const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg">
-                      {t("homepage.contact.phone.label")}
+                      {t("phone_label")}
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder={t("homepage.contact.phone.placeholder")}
-                        {...field}
-                      />
+                      <Input placeholder={t("phone_placeholder")} {...field} />
                     </FormControl>
-                    <FormDescription>
-                      {t("homepage.contact.phone.description")}
-                    </FormDescription>
+                    <FormDescription>{t("phone_description")}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -132,16 +122,16 @@ const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg">
-                      {t("homepage.contact.message.label")}
+                      {t("message_label")}
                     </FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder={t("homepage.contact.message.placeholder")}
+                        placeholder={t("message_placeholder")}
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      {t("homepage.contact.message.description")}
+                      {t("message_description")}
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -167,10 +157,10 @@ const Contact = () => {
                       },
                     );
 
-                    toast(t("homepage.contact.toast.description"), {
+                    toast(t("toast_description"), {
                       description: formattedDate,
                       action: {
-                        label: t("homepage.contact.toast.button"),
+                        label: t("toast_button"),
                         onClick: () => console.log("Undo"),
                       },
                     });
@@ -180,10 +170,10 @@ const Contact = () => {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    {t("homepage.contact.loading")}
+                    {t("loading")}
                   </>
                 ) : (
-                  t("homepage.contact.button")
+                  t("button")
                 )}
               </Button>
             </form>

@@ -18,7 +18,7 @@ import NavMenu from "../nav-menu";
 import { getMessages } from "next-intl/server";
 
 const Header = async () => {
-  const t = useTranslations("Navbar");
+  const t = useTranslations("Header");
   const messages = await getMessages();
   return (
     // <nav className="sticky inset-x-0 top-0 z-50 h-20 bg-slate-100">

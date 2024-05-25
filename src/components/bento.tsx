@@ -1,6 +1,4 @@
-import React, { FC, ReactNode } from "react";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import Image from "next/image";
+import React from "react";
 import GridItem from "./grid-items/grid-item";
 import Social from "./grid-items/social";
 import Offering from "./grid-items/offering";
@@ -9,6 +7,7 @@ import About from "./grid-items/about";
 import Offerings from "./grid-items/offerings";
 import Title from "./grid-items/title";
 import MaxWidthWrapper from "./max-width-wrapper";
+import { useTranslations } from "next-intl";
 
 export type GridItemLayout =
   | "1x2"
@@ -63,15 +62,15 @@ export interface GridItemInterface {
 }
 
 const Bento = async () => {
-  const { t } = await useTranslation(lng);
+  const t = useTranslations("Bento");
   const GridItems: GridItemInterface[] = [
     {
       layout: "4x4",
       type: "title",
-      title: t("homepage.bento.title.title"),
-      accentTitle: t("homepage.bento.title.accent_title"),
-      description: t("homepage.bento.title.description"),
-      buttonTitle: t("homepage.bento.title.button"),
+      title: t("title_start"),
+      accentTitle: t("title_end"),
+      description: t("title_description"),
+      buttonTitle: t("title_button"),
     },
     {
       layout: "2x2",
@@ -79,9 +78,9 @@ const Bento = async () => {
       title: "Instagram",
       icon: "instagram",
       username: "@matveeva__kate",
-      description: t("homepage.bento.social.description"),
+      description: t("social_description"),
       color: "#FF0000",
-      buttonTitle: t("homepage.bento.social.button"),
+      buttonTitle: t("social_button"),
       buttonLink: "https://www.instagram.com/matveeva__kate/",
       buttonSecondaryText: "5.5K",
     },
@@ -91,24 +90,24 @@ const Bento = async () => {
       title: "Telegram",
       icon: "telegram",
       username: "@kate520",
-      buttonTitle: t("homepage.bento.social_mini.button"),
+      buttonTitle: t("social_mini_button"),
       buttonLink: "https://t.me/kate520",
       color: "#229ED9",
     },
     {
       layout: "1x2",
       type: "social",
-      title: t("homepage.bento.social_phone.title"),
+      title: t("social_phone_title"),
       icon: "phone",
       username: "+48 578 075 927",
-      buttonTitle: t("homepage.bento.social_phone.button"),
+      buttonTitle: t("social_phone_button"),
       buttonLink: "/",
       color: "#070707",
     },
     {
       layout: "2x4",
       type: "about",
-      title: t("homepage.bento.about.title"),
+      title: t("about_title"),
       description: "",
       icon: "upRightArrow",
       color: "(var(--foreground))",
@@ -117,19 +116,19 @@ const Bento = async () => {
       features: [
         {
           id: 1,
-          title: t("homepage.bento.about.expirience"),
+          title: t("about_expirience"),
           value: "3+",
           icon: "calendar",
         },
         {
           id: 2,
-          title: t("homepage.bento.about.clients"),
+          title: t("about_clients"),
           value: "1000+",
           icon: "check",
         },
         {
           id: 3,
-          title: t("homepage.bento.about.decisions"),
+          title: t("about_decisions"),
           value: "99%",
           icon: "trophy",
         },
@@ -138,17 +137,17 @@ const Bento = async () => {
     {
       layout: "2x2",
       type: "offerings",
-      title: t("homepage.bento.offerings.title"),
+      title: t("offerings_title"),
       icon: "file",
-      buttonTitle: t("homepage.bento.offerings.button"),
+      buttonTitle: t("offerings_button"),
       buttonLink: "/",
       color: "#2196F3",
-      description: t("homepage.bento.offerings.description"),
+      description: t("offerings_description"),
     },
     {
       layout: "2x1",
       type: "info",
-      title: t("homepage.bento.info.title"),
+      title: t("info_title"),
       icon: "question",
       color: "#dcdcdc",
       buttonLink: "/",
@@ -157,7 +156,7 @@ const Bento = async () => {
     {
       layout: "2x1",
       type: "info",
-      title: t("homepage.bento.info.reviews"),
+      title: t("info_reviews"),
       icon: "star",
       stars: 19,
       color: "#FFD700",
@@ -166,9 +165,9 @@ const Bento = async () => {
     {
       layout: "2x1",
       type: "offering",
-      title: t("homepage.bento.offering_consult.title"),
+      title: t("offering_consult_title"),
       icon: "messages",
-      description: t("homepage.bento.offering.promo"),
+      description: t("offering_promo"),
       promotion: "kate520",
       color: "#2196F3",
       oldPrice: "300zł",
@@ -178,11 +177,11 @@ const Bento = async () => {
     {
       layout: "2x2",
       type: "offerings",
-      title: t("homepage.bento.offerings_course.title"),
+      title: t("offerings_course_title"),
       username: "@matveeva__kate",
-      description: t("homepage.bento.offerings_course.description"),
+      description: t("offerings_course_description"),
       icon: "course",
-      buttonTitle: t("homepage.bento.offerings_course.button"),
+      buttonTitle: t("offerings_course_button"),
       color: "#A569BD",
       buttonSecondaryText: "-%10",
       buttonLink: "https://www.instagram.com/matveeva__kate/",
@@ -190,9 +189,9 @@ const Bento = async () => {
     {
       layout: "2x1",
       type: "offering",
-      title: t("homepage.bento.offering_permission.title"),
+      title: t("offering_permission_title"),
       icon: "card",
-      description: t("homepage.bento.offering.promo"),
+      description: t("offering_promo"),
       color: "#228B22",
       promotion: "kate520",
       oldPrice: "1400zł",
@@ -242,10 +241,6 @@ const Bento = async () => {
               </GridItem>
             ))}
           </div>
-          {/* Footer for Mobile */}
-          {/* <div className="flex pb-6 xl:hidden">
-        <Footer />
-      </div> */}
         </div>
       </div>
     </MaxWidthWrapper>

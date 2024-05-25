@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Author from "../../public/images/kate-matveeva.jpeg";
+import { useTranslations } from "next-intl";
 
 const About = () => {
+  const t = useTranslations("About");
   return (
     <section id="about" className="border-1 border-gray-200">
       <MaxWidthWrapper>
@@ -34,12 +36,9 @@ const About = () => {
               />
             </div>
             <div className="flex flex-col items-center justify-center gap-3 rounded-sm sm:items-start lg:max-w-md lg:text-left xl:max-w-lg">
-              <h1 className="text-left text-4xl font-bold">Обо мне</h1>
+              <h1 className="text-left text-4xl font-bold">{t("title")}</h1>
               <p className="max-w-prose text-justify text-base text-muted-foreground">
-                Живу в Польше больше 8 лет и самостоятельно прошла весь путь от
-                визы до польского гражданства. Теперь помогаю иностранцам
-                переехать и легализоваться в Польше. Разбираю индивидуальный
-                путь для получения ВНЖ, ПМЖ , Гражданства.
+                {t("description")}
               </p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { getMessages } from "next-intl/server";
 import Header from "../modules/header";
 import { NextIntlClientProvider } from "next-intl";
+import Footer from "../modules/footer";
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   const messages = await getMessages();
@@ -13,7 +14,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
           {children}
         </NextIntlClientProvider>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

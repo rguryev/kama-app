@@ -33,12 +33,12 @@ export const LanguagePicker: React.FC = () => {
         <DropdownMenuSeparator />
 
         <DropdownMenuCheckboxItem checked={locale === "en"}>
-          <Link href={"/" + otherLocale} prefetch={false}>
+          <Link href={"/" + otherLocale} prefetch={false} locale="en">
             English
           </Link>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem checked={locale === "ru"}>
-          <Link href={"/" + otherLocale} prefetch={false}>
+          <Link href={"/" + otherLocale} prefetch={false} locale="ru">
             Russian
           </Link>
         </DropdownMenuCheckboxItem>

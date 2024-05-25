@@ -1,48 +1,45 @@
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 
-const perks = [
-  {
-    id: "1",
-    Icon: ArrowDownToLine,
-    description: "Хотите переехать в Польшу, но не знаете с чего начать",
-  },
-  {
-    id: "2",
-    Icon: CheckCircle,
-    description:
-      "Не знаете на какую Карту Побыта можно податься и какие документы собрать",
-  },
-  {
-    id: "3",
-    Icon: Leaf,
-    description:
-      "Хотите остаться в Польше на долгий срок и получить гражданство",
-  },
-  {
-    id: "4",
-    Icon: Leaf,
-    description:
-      "Не хотите тратить свое время и нервы на самостоятельный сбор документов",
-  },
-];
-
 import React from "react";
 import TitleContainer from "./title-container";
 import MaxWidthWrapper from "./max-width-wrapper";
 import SectionContainer from "./section-container";
+import { useTranslations } from "next-intl";
 
 const Solutions = () => {
+  const t = useTranslations("Solutions");
+  const perks = [
+    {
+      id: "1",
+      Icon: ArrowDownToLine,
+      description: t("problem_1"),
+    },
+    {
+      id: "2",
+      Icon: CheckCircle,
+      description: t("problem_2"),
+    },
+    {
+      id: "3",
+      Icon: Leaf,
+      description: t("problem_3"),
+    },
+    {
+      id: "4",
+      Icon: Leaf,
+      description: t("problem_4"),
+    },
+  ];
   return (
     <section id="solutions">
       <MaxWidthWrapper className="mb-8 mt-24 rounded-xxl bg-card text-center">
         <SectionContainer>
           <TitleContainer>
             <h1 className="font-bold tracking-tight text-gray-900 dark:text-white">
-              Какие проблемы я помогу решить?
+              {t("title")}
             </h1>
             <p className="mt-6 max-w-prose text-lg font-normal tracking-normal text-gray-600 dark:text-white">
-              Это самые распространенные сложности, с которыми сталкиваются мои
-              клиенты
+              {t("description")}
             </p>
           </TitleContainer>
 

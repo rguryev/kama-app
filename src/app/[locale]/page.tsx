@@ -10,20 +10,22 @@ import Bento from "@/components/bento";
 import Contact from "@/components/contact";
 import { useTranslations } from "next-intl";
 export default function Home({ params: { lng } }: any) {
-  const t = useTranslations("Navbar");
+  const t = useTranslations("Header");
   return (
     <>
-      <h1>{t("mobile_menu_description")}</h1>
-      {/* <Hero />
+      <Hero />
       <Bento />
       <About />
+
       <Solutions />
       <Workflow />
+
       <Pricing />
+
       <Reviews />
       <Target />
       <CoursePricing />
-      <Contact /> */}
+      <Contact />
     </>
   );
 }

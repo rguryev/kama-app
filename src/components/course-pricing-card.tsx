@@ -20,6 +20,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import CoursePricingDialog from "./course-pricing-dialog";
+import { useTranslations } from "next-intl";
 
 export interface CoursePricingCardProps
   extends React.ComponentProps<typeof Card> {
@@ -47,6 +48,7 @@ export type Block = {
 };
 
 const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
+  const t = useTranslations("CoursePricingCard");
   return (
     <Card
       key={plan.id}
@@ -70,7 +72,7 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
           <div className="flex h-10 rounded-2xl border-gray-600 bg-card shadow-compact">
             <div className="mx-auto flex items-center space-x-0  text-sm">
               <p className="text-center">
-                Продолжительность курса {plan.quota.toLocaleString()} месяц
+                {t("course_duration", { quota: plan.quota.toLocaleString() })}
               </p>
 
               <Tooltip delayDuration={300}>
@@ -78,7 +80,7 @@ const CoursePricingCard: FC<CoursePricingCardProps> = ({ plan }) => {
                   <HelpCircle className="ml-1 h-4 w-4 text-gray-700" />
                 </TooltipTrigger>
                 <TooltipContent className="w-80 p-2">
-                  Старт потока 30 января
+                  {t("course_start")}
                 </TooltipContent>
               </Tooltip>
             </div>

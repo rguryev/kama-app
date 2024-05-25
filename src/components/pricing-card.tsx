@@ -8,25 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FC } from "react";
-
-const points = [
-  {
-    title: "Бизнес",
-    description: "Коротко о пункте Бизнес",
-  },
-  {
-    title: "Работа",
-    description: "Коротко о пункте Работа",
-  },
-  {
-    title: "Учеба",
-    description: "Коротко о пункте Учеба",
-  },
-  {
-    title: "Воссоединение семьи",
-    description: "Коротко о пункте Воссоединение семьи",
-  },
-];
+import { useTranslations } from "next-intl";
 
 interface PricingCardProps extends React.ComponentProps<typeof Card> {
   plan: {
@@ -39,6 +21,25 @@ interface PricingCardProps extends React.ComponentProps<typeof Card> {
 }
 
 const PricingCard: FC<PricingCardProps> = ({ plan, className, ...props }) => {
+  const t = useTranslations("PricingCard");
+  const points = [
+    {
+      title: t("point_1_title"),
+      description: t("point_1_description"),
+    },
+    {
+      title: t("point_2_title"),
+      description: t("point_2_description"),
+    },
+    {
+      title: t("point_3_title"),
+      description: t("point_3_description"),
+    },
+    {
+      title: t("point_4_title"),
+      description: t("point_4_description"),
+    },
+  ];
   return (
     <Card
       key={plan.id}
