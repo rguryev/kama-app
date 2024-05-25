@@ -29,7 +29,7 @@ export interface CoursePricingCardProps
     title: string;
     tagline: string;
     quota: number;
-    price: number;
+    price: string;
     features: Feature[];
     blocks: Block[];
   };

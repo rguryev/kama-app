@@ -16,7 +16,6 @@ import {
 } from "../assets";
 
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
-import i18next from "i18next";
 
 export const workflowStages: {
   id: string;
