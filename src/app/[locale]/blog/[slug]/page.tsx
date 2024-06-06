@@ -1,13 +1,7 @@
 import getCategoryColor from "@/lib/get-category-color";
 import Image from "next/image";
 
-export default function BlogDetails({
-  className,
-  props,
-}: {
-  className?: string;
-  props: any;
-}) {
+const BlogDetails = () => {
   return (
     <div className="mx-auto mt-8 flex max-w-2xl flex-col gap-4">
       <div>
@@ -44,4 +38,6 @@ export default function BlogDetails({
       </div>
     </div>
   );
-}
+};
+
+export default BlogDetails;
