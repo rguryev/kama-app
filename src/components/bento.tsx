@@ -61,7 +61,7 @@ export interface GridItemInterface {
   email?: string;
 }
 
-const Bento = async () => {
+const Bento = () => {
   const t = useTranslations("Bento");
   const GridItems: GridItemInterface[] = [
     {

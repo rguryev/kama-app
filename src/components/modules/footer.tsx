@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import Logo from "../logo";
 import { useTranslations } from "next-intl";
 
-const Footer = async () => {
+const Footer = () => {
   const t = useTranslations("Footer");
   const navLinksServices: {
     id: string;
