@@ -1,7 +1,23 @@
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import Card from "@/components/modules/card";
+import config from "@/config";
 
-export default function Page() {
+const fetchBlogs = async () => {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.API_TOKEN}`,
+    },
+  };
+  const request = await fetch(`${config.api}/api/blogs?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response;
+};
+
+export default async function Page() {
+  const blogs = await fetchBlogs();
+
+  console.log(blogs.data);
   return (
     <>
       <h1>Hello, Home page!</h1>
