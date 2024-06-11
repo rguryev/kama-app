@@ -7,9 +7,14 @@ import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Layout from "@/components/layouts/layout";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
+import { locales } from "@/lib/locales";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }));
+// }
 
 export const metadata: Metadata = {
   title: "KaMa documents",
@@ -23,6 +28,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  // unstable_setRequestLocale(locale);
   return (
     <html lang={locale} className="h-full">
       <body
