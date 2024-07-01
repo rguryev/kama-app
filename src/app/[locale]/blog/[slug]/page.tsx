@@ -5,9 +5,8 @@ import config from "@/config";
 import { locales } from "@/lib/locales";
 import { getLocale, unstable_setRequestLocale } from "next-intl/server";
 
-const BlogDetails = async (props: any) => {
-  // const locale = await getLocale();
-  // unstable_setRequestLocale(locale);
+const BlogDetails = async ({ locale, ...props }: any) => {
+  unstable_setRequestLocale(locale);
   const blogs: any = await fetchBlogs(
     `filters[slug][$eq]=${props.params.slug}`,
   );

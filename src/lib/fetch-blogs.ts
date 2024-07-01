@@ -1,19 +1,20 @@
 import config from "@/config";
+import axios from "axios";
 
 const fetchBlogs = async (params?: string) => {
-  const reqOptions = {
-    headers: {
-      Authorization: `Bearer ${process.env.API_TOKEN}`,
-      cache: "no-store",
-    },
-  };
-  const request = await fetch(
-    `${config.api}/api/blogs?populate=*&${params}`,
-    reqOptions,
-  );
-  const response = await request.json();
-
-  return response;
+  try {
+    const apiUrl = `${config.api}/api/blogs?populate=*&${params}`;
+    const response = await axios.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.API_TOKEN}`,
+      },
+    });
+    // console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    throw error;
+  }
 };
 
 export default fetchBlogs;

@@ -9,10 +9,13 @@ import Workflow from "@/components/workflow";
 import Bento from "@/components/bento";
 import Contact from "@/components/contact";
 import { useTranslations } from "next-intl";
-export default function Home({ params: { lng } }: any) {
+import { unstable_setRequestLocale } from "next-intl/server";
+import Layout from "@/components/layouts/layout";
+export default function Home({ params: { locale } }: any) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Header");
   return (
-    <>
+    <Layout>
       <Hero />
       <Bento />
       <About />
@@ -26,6 +29,6 @@ export default function Home({ params: { lng } }: any) {
       <Target />
       <CoursePricing />
       <Contact />
-    </>
+    </Layout>
   );
 }
