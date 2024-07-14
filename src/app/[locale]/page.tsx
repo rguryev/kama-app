@@ -16,6 +16,7 @@ export default function Home({ params: { locale } }: any) {
   const t = useTranslations("Header");
   return (
     <Layout>
+      {/* Test */}
       <Hero />
       <Bento />
       <About />
