@@ -1,6 +1,6 @@
 import React from "react";
-import { IPageInfo } from "../target";
-import CompactWrap from "../compact-wrap";
+import { IPageInfo } from "@/app/(browse)/[locale]/(home)/target";
+import CompactWrap from "@/wrappers/compact-wrap";
 
 const Badge = ({ pageInfo }: { pageInfo: IPageInfo }) => {
   return (
