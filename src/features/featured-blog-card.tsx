@@ -7,7 +7,7 @@ import ConditionalRenderer from "@/lib/condititional-renderer";
 import getCategoryColor from "@/lib/get-category-color";
 import { Button } from "@/components/ui/button";
 
-export interface CardProps {
+export interface BlogCardProps {
   className?: string;
   label?: string;
   title?: string;
@@ -17,7 +17,7 @@ export interface CardProps {
   href?: any;
 }
 
-const Card: FC<CardProps> = ({
+const FeaturedBlogCard: FC<BlogCardProps> = ({
   className,
   label,
   title,
@@ -27,9 +27,10 @@ const Card: FC<CardProps> = ({
   imgAlt,
 }) => {
   return (
-    <div
+    <Link
+      href={href}
       className={cn(
-        "flex w-full flex-col gap-8 overflow-hidden rounded-3xl shadow-xl",
+        "flex h-[500px] w-full flex-col gap-6 overflow-hidden rounded-3xl bg-white shadow-xl	",
         className,
       )}
     >
@@ -38,26 +39,22 @@ const Card: FC<CardProps> = ({
           <Image src={imgSrc} fill alt={imgAlt} className="object-cover" />
         </div>
       </div>
-      <div className="ml-4 flex flex-1 flex-col justify-center pb-4">
+      <div className="mr-10 flex flex-1 flex-col justify-center pb-4">
         <ConditionalRenderer condition={label}>
           <h6 className={`color mb-2 font-medium ${getCategoryColor(label)}`}>
             {label}
           </h6>
         </ConditionalRenderer>
         <ConditionalRenderer condition={title}>
-          <h3 className="mb-4 text-2xl font-bold">{title}</h3>
+          <h3 className="mb-4 text-xl font-bold">{title}</h3>
         </ConditionalRenderer>
+
         <ConditionalRenderer condition={summary}>
           <div className="mb-4">{summary}</div>
         </ConditionalRenderer>
-        <ConditionalRenderer condition={href}>
-          <Button className="w-40" asChild>
-            <Link href={href}>Read More</Link>
-          </Button>
-        </ConditionalRenderer>
       </div>
-    </div>
+    </Link>
   );
 };
 
-export default Card;
+export default FeaturedBlogCard;

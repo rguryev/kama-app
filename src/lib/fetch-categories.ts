@@ -1,20 +1,20 @@
 import config from "@/config";
 import axios from "axios";
 
-const fetchBlogs = async (params?: string) => {
+const fetchCategories = async () => {
   const options = {
     headers: {
       Authorization: `Bearer ${process.env.API_TOKEN}`,
     },
   };
+
   try {
-    const res = `${config.api}/api/blogs?populate=*&${params}`;
+    const res = `${config.api}/api/categories`;
     const response = await axios.get(res, options);
     return response.data;
-  } catch (error) {
-    console.error("Error fetching blogs:", error);
-    throw error;
+  } catch (err) {
+    console.error(err);
   }
 };
 
-export default fetchBlogs;
+export default fetchCategories;

@@ -4,20 +4,35 @@ import fetchBlogs from "@/lib/fetch-blogs";
 import config from "@/config";
 import { locales } from "@/lib/locales";
 import { getLocale, unstable_setRequestLocale } from "next-intl/server";
+import Link from "next/link";
 
-const BlogDetails = async ({ locale, ...props }: any) => {
+interface BlogDetailsProps {
+  params: {
+    locale: string;
+    slug: string;
+  };
+  [key: string]: any;
+}
+
+const BlogDetails = async ({
+  params: { locale, slug },
+  ...props
+}: BlogDetailsProps) => {
   unstable_setRequestLocale(locale);
-  const blogs: any = await fetchBlogs(
-    `filters[slug][$eq]=${props.params.slug}`,
-  );
+  const blogs: any = await fetchBlogs(`filters[slug][$eq]=${slug}`);
   if (blogs.data.length === 0) {
     return null;
   }
   const blog = blogs.data[0];
 
+  console.log(locale);
+
+  const referer = `/${locale}/blog`;
+
   return (
     <div className="mx-auto mt-8 flex max-w-2xl flex-col gap-4">
-      <h1>{props.params.slug}</h1>
+      <Link href={referer}>{"<- Back"}</Link>
+      <h1>{slug}</h1>
       <div>
         <h6
           className={`color mb-2 font-medium ${getCategoryColor(
