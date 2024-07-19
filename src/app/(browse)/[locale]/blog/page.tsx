@@ -25,7 +25,7 @@ export default async function Page({ params: { locale } }: any) {
       <div className="mt-9 grid grid-cols-12 gap-4">
         <div className="col-span-12">
           <h1 className="my-4 text-3xl font-semibold">
-            <b>Hey, Guryev dev here! </b>
+            <b>Hey, KaMa blog here! </b>
             <br />
             It is a blogpost page
           </h1>

@@ -110,6 +110,13 @@ const NavMenu = () => {
           id="nav-list"
           className="grid grid-cols-1 gap-1 sm:flex sm:flex-row"
         >
+          <NavigationMenuItem className="order-2 md:order-3">
+            <Link href={"/ru/blog"} legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                {t("blog")}
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
           <NavigationMenuItem className="order-4 md:order-1">
             <NavigationMenuTrigger>{t("services")}</NavigationMenuTrigger>
             <NavigationMenuContent>

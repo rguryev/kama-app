@@ -6,15 +6,17 @@ import { cn } from "@/lib/utils";
 import ConditionalRenderer from "@/lib/condititional-renderer";
 import getCategoryColor from "@/lib/get-category-color";
 import { Button } from "@/components/ui/button";
+import { getRelativeTime } from "@/lib/get-relative-time";
 
 export interface BlogCardProps {
   className?: string;
-  label?: string;
+  label?: any;
   title?: string;
   summary?: string;
   imgSrc?: any;
   imgAlt?: any;
   href?: any;
+  publishedAt?: string | number | Date;
 }
 
 const BlogCard: FC<BlogCardProps> = ({
@@ -25,15 +27,19 @@ const BlogCard: FC<BlogCardProps> = ({
   href,
   imgSrc,
   imgAlt,
+  publishedAt,
 }) => {
   const truncateBlogSummary =
     summary && summary.length > 80 ? summary.substring(0, 80) + "..." : summary;
+
+  const publicationDate = publishedAt!;
+  const relativeTime = getRelativeTime(publicationDate);
 
   return (
     <Link
       href={href}
       className={cn(
-        "flex h-[480px] w-full flex-col gap-4 overflow-hidden rounded-3xl bg-white shadow-xl	",
+        "flex h-[500px] w-full flex-col gap-4 overflow-hidden rounded-3xl bg-white shadow-xl	",
         className,
       )}
     >
@@ -48,8 +54,6 @@ const BlogCard: FC<BlogCardProps> = ({
             {label}
           </h6>
         </ConditionalRenderer>
-        {/* <span className="">{title}</span>
-        <span className="">{truncateBlogSummary}</span> */}
 
         <div className="">
           <ConditionalRenderer condition={title}>
@@ -61,6 +65,7 @@ const BlogCard: FC<BlogCardProps> = ({
             </ConditionalRenderer>
           )}
         </div>
+        <span className="mt-1 text-gray-500">{relativeTime}</span>
       </div>
     </Link>
   );

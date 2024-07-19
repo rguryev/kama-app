@@ -25,8 +25,6 @@ const BlogDetails = async ({
   }
   const blog = blogs.data[0];
 
-  console.log(locale);
-
   const referer = `/${locale}/blog`;
 
   return (
@@ -54,6 +52,11 @@ const BlogDetails = async ({
           className="flex-col"
           dangerouslySetInnerHTML={{ __html: blog.attributes.Content }}
         ></div>
+      </div>
+      <div className="mt-4 flex items-center text-gray-400">
+        <span className="text-sm">
+          Published on {new Date(blog.attributes.publishedAt).toLocaleString()}
+        </span>
       </div>
     </div>
   );

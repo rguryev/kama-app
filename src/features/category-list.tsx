@@ -1,11 +1,14 @@
 "use client";
 import Category from "@/components/category";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { CategoryContext } from "@/context/category-context";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext, useLayoutEffect } from "react";
 
 export default function CategoryList({ categories }: any) {
   // const categories = [
+
   //   {
   //     id: 1,
   //     name: "product reviews",
@@ -48,6 +51,11 @@ export default function CategoryList({ categories }: any) {
   //   },
   // ];
 
+  const { changeCategory } = useContext(CategoryContext);
+
+  useLayoutEffect(() => {
+    changeCategory(categories?.data[0].attributes.Title);
+  }, []);
   return (
     <div className="my-8">
       <h1 className="text-xl font-semibold">Popular categories:</h1>
@@ -56,7 +64,7 @@ export default function CategoryList({ categories }: any) {
           <div className="flex flex-wrap gap-1 space-x-1">
             {categories?.data?.map((category: any) => (
               <div key={category.id}>
-                <Category category={category} />
+                <Category cat={category} />
               </div>
             ))}
           </div>
